@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Contact | 4Shop</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -34,19 +35,19 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="javascript:"><i class="fa fa-phone"></i> +855 10 910 651</a></li>
-								<li><a href="javascript:"><i class="fa fa-envelope"></i> khy@4shop.com</a></li>
+							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-phone"></i> +855 10 910 651</a></li>
+							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-envelope"></i> khy@4shop.com</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="javascript:"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-twitter" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-linkedin" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-dribbble" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-google-plus" style="color: #fff"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -178,15 +179,14 @@
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Contact Info</h2>
 	    				<address>
-	    					<p>4Shop Inc.</p>
-							<p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-							<p>Newyork USA</p>
-							<p>Mobile: +2346 17 38 93</p>
-							<p>Fax: 1-714-252-0026</p>
-							<p>Email: info@4Shop.com</p>
+	    					<p>4Shop</p>
+	    					<p>Borey Pipob Tmey Chamkar Doung, Phnom Penh</p>
+	    					<p>Cambodia</p>
+							<p>Mobile: +855 10 910 651</p>
+							<p>Email: khy@4Shop.com</p>
 	    				</address>
 	    				<div class="social-networks">
-	    					<h2 class="title text-center">Social Networking</h2>
+	    					<h2 class="title text-center">Find Us On Social Network</h2>
 							<ul>
 								<li>
 									<a href="javascript:"><i class="fa fa-facebook"></i></a>

@@ -1,5 +1,5 @@
 
-  $("#fileUpload").on('change', function () {
+ $("#fileUpload").on('change', function () {
 
     var imgPath = $(this)[0].value;
     var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
@@ -12,7 +12,7 @@
 
             var reader = new FileReader();
             reader.onload = function (e) {
-                $("<img />", {
+                $("<img/>", {
                     "src": e.target.result,
                         "class": "thumb-image"
                 }).appendTo(image_holder);

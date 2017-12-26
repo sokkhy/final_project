@@ -21,8 +21,8 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>4Shop</title>
-  	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+    <title>Home | 4Shop</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -34,11 +34,17 @@ if ($conn->connect_error) {
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/ico/favicon.html">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.html">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head><!--/head-->
+  	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head><!--/head--><!--/head-->
 
 <body>
 	<header id="header"><!--header-->
@@ -68,7 +74,7 @@ if ($conn->connect_error) {
 			</div>
 		</div><!--/header_top-->
 		
-		<div class="header-middle"><!--header-middle-->
+		 <class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 clearfix">
@@ -368,7 +374,7 @@ if ($conn->connect_error) {
 								<?php
 $output ="";
 $i = 0;
-$sql = "SELECT * FROM adidas";
+$sql = "SELECT * FROM nike";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
@@ -379,48 +385,19 @@ $i++;
 	$output.="<div class='col-sm-4'>".
 			"<div class='product-image-wrapper'>".
 			"<div class='single-products'>";
-		$output.= "<div class='productinfo text-center' id='shi_code".$i."'>". $row["id"].
+		$output.= "<div class='productinfo text-center' id='shi_code".$i."'>". $row["shirtCode"].
 				"<p id='shi_name".$i."'>". $row["shirtName"]."</p>".
 				"<p id='shi_size".$i."'>". $row["shirtSize"]."</p>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<img style='width:70%;' class='shi_img".$i."' src='uploads/".$row['image']."'/>".
+				"<img style='width:70%;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 		  "</div>";
 
  $output.="</div>";
 $output.="</div>";
-$output.="</div>";
- 		$output.="<script>".
-                        "$(document).ready(function(){
-                            $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'adidas';
-
-                            
-                             }); 
-
-                       
-                    })".
-             "</script>";
-          $output.="<script>".
-
- 						"$(document).ready(function(){
-                            $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
-							
-                     
-                             }); 
-
-                       
-                    })".
-          "</script>";
+$output.="</div>"; 		
    		}
 	} else {
-    echo "No Data";
+    echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
 }
 
 $output.="</div>";

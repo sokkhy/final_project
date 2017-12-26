@@ -34,19 +34,19 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="javascript:"><i class="fa fa-phone"></i> +855 10 910 651</a></li>
-								<li><a href="javascript:"><i class="fa fa-envelope"></i> khy@4shop.com</a></li>
+							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-phone"></i> +855 10 910 651</a></li>
+							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-envelope"></i> khy@4shop.com</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="javascript:"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-twitter" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-linkedin" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-dribbble" style="color: #fff"></i></a></li>
+								<li><a href="javascript:"><i class="fa fa-google-plus" style="color: #fff"></i></a></li>
 							</ul>
 						</div>
 					</div>

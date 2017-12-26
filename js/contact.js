@@ -24,7 +24,7 @@ jQuery(function ($) {
         lat: 11.522966,
         lng: 104.851265,
         scrollwheel: false,
-        zoom:20,
+        zoom:15,
         zoomControl: false,
         panControl: false,
         streetViewControl: false,

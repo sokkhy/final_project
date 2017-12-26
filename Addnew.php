@@ -15,12 +15,12 @@
   $ins_brand = $_GET["sh_brand"];
 
   // use prepared statment to insert data
-  $stmt = $conn->prepare("INSERT INTO $ins_brand (id,shirtName, shirtSize, Price, image) VALUES (?, ?, ?,?, ?)");
-  $stmt->bind_param("sssss", $id, $shirtName, $shirtSize, $Price, $image);
+  $stmt = $conn->prepare("INSERT INTO $ins_brand (shirtCode, shirtName, shirtSize, Price, image) VALUES (?, ?, ?,?, ?)");
+  $stmt->bind_param("sssss", $shirtCode, $shirtName, $shirtSize, $Price, $image);
 
   //validate form 
-  if(!empty($_POST['shirtid']) && !empty($_POST['shirtname']) && !empty($_POST['shirtsize']) && !empty($_POST['price']) && !empty($_FILES["fileToUpload"]["name"])){
-    $id = $_POST["shirtid"];
+  if(!empty($_POST['shirtcode']) && !empty($_POST['shirtname']) && !empty($_POST['shirtsize']) && !empty($_POST['price']) && !empty($_FILES["fileToUpload"]["name"])){
+    $shirtCode = $_POST["shirtcode"];
     $shirtName = $_POST["shirtname"];
     $shirtSize=$_POST["shirtsize"];
     $Price = $_POST["price"];
@@ -37,7 +37,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <style><?php include 'css/style.css';?></style>
 </head>
 <body>
@@ -51,7 +50,7 @@
 		  <form class="form-inline form" action="" method="post" enctype="multipart/form-data" style="display: inline-grid;">
         <div class="form-group">
         
-          Shirt_ID: <input type="text" class="form-control" id="shirt_id"  name="shirtid">
+          Shirt_Code: <input type="text" class="form-control" id="shirt_code"  name="shirtcode">
         </div>
 		    <div class="form-group">
 		    
@@ -79,11 +78,13 @@
 
 </body>
 </html>
+ 
 
+</body>
+</html>
 <?php
 if(isset($_POST["submit"])) {
-$ins_brand = $_GET["sh_brand"];
-$target_dir = "uploads/";
+$target_dir = "upload/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -122,7 +123,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-       header('Location: http://localhost:81/4Shop1/addnew.php');
+       header('Location: http://localhost:81/4Shop/Addnew.php');
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
