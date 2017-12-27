@@ -266,8 +266,8 @@ $sql = "(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
-					<div class='features_items'><!--features_items-->
-						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling TShirt</h2>";
+					<div class='features_items'>
+						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
  while($row = $result->fetch_assoc()) {
 $i++;
 	$output.="<div class='col-sm-4'>".
