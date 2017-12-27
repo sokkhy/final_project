@@ -40,10 +40,10 @@
         width: 100%;
         text-align: center;
     }
-    .shop-menu ul{
+    /*.shop-menu ul{
         display: inline-block;
         float: none;
-    }
+    }*/
     .shop-menu ul li a {
         padding-left: 0;
     }

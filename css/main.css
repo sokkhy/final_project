@@ -256,7 +256,7 @@ a#scrollUp i {
 .search_box input {
     background: #F0F0E9;
     border: medium none;
-    color: #B2B2B2;
+    color: #000;
     font-family: 'roboto';
     font-size: 12px;
     font-weight: 300;
@@ -341,9 +341,14 @@ ul.sub-menu {
 **************************/
 
 #footer {
-    background: #F0F0E9;
+    background: #eb0606;
 }
-
+#footer p{
+    color: #ffffff;
+}
+#footer h2{
+    color: #ffffff;
+}
 .footer-top .container {
     border-bottom: 1px solid #E0E0DA;
     padding-bottom: 20px;
@@ -362,13 +367,14 @@ ul.sub-menu {
 
 .companyinfo h2 span {
     color: #FE980F;
+    font-size: 2em;
 }
 
 .companyinfo p {
     color: #B3B3AD;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 900;
 }
 
 .footer-top .col-sm-3 {
@@ -448,7 +454,7 @@ ul.sub-menu {
 }
 
 .address p {
-    color: #666663;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -467,7 +473,7 @@ ul.sub-menu {
 }
 
 .single-widget h2 {
-    color: #666663;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -480,7 +486,7 @@ ul.sub-menu {
 }
 
 .single-widget ul li a {
-    color: #8C8C88;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -493,12 +499,12 @@ ul.sub-menu {
 
 .single-widget ul li a:hover {
     background: none;
-    color: #FE980F;
+    color: #ffffff;
 }
 
 .searchform input {
     border: 1px solid #DDDDDD;
-    color: #CCCCC6;
+    
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     margin-top: 0;
@@ -517,7 +523,7 @@ ul.sub-menu {
 }
 
 .searchform button i {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 20px;
 }
 
@@ -527,7 +533,7 @@ ul.sub-menu {
 }
 
 .searchform p {
-    color: #8C8C88;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -540,14 +546,14 @@ ul.sub-menu {
 }
 
 .footer-bottom p {
-    color: #363432;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-left: 15px;
 }
 
 .footer-bottom p span a {
-    color: #FE980F;
+    color: #ffffff;
     font-style: italic;
     text-decoration: underline;
 }
@@ -2358,7 +2364,7 @@ textarea {
 }
 
 #contact-page .form-control::-moz-placeholder {
-    color: #8D8D8D;
+    color: #000;
 }
 
 #contact-page .form-control {

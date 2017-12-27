@@ -44,9 +44,9 @@ if ($result->num_rows > 0) {
         "Shirt Size: <input type='text' class='form-control' id='shirt_size".$i."''  name='shirtsize' value='".$row["shirtSize"]."'>".
           "Shirt Name: <input type='text' class='form-control' id='shirt_name".$i."''  name='shirtname' value='".$row["shirtName"]."'>".
           "Shirt Price: <input type='text' class='form-control' id='shirt_price".$i."''  name='shirtprice' value='".$row["Price"]."'>".
-        "<td><img class='shi_img shirtimage".$i."'' src='uploads/".$row['image']."'/></td>".
+        "<td><img class='shi_img shirtimage".$i."'' src='upload/".$row['image']."'/></td>".
         "<td>". $row["RegisterDate"]."</td>".
-        "<input type='button' id='submit".$i."' style='width: 90px;'>".
+        "<input type='button' value='Update' id='submit".$i."' style='width: 90px;'>".
         "<div id='image-holder'>Display image</div>";
       
     $output.="<script>
@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
                                var sizeUpdate =  $('#shirt_size".$i."').val();   
                                var nameUpdate =  $('#shirt_name".$i."').val(); 
                               var b  ='".$brand."';
-                               window.location.href = 'http://localhost:81/4Shop1/test.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&PU='+priceUpdate+'&brand='+b;      
+                               window.location.href = 'http://localhost:81/4Shop/test.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&PU='+priceUpdate+'&brand='+b;      
 
     });
 
@@ -116,7 +116,7 @@ $output.="</form>";
 <?php
 if(isset($_POST["submit"])) {
 
-$target_dir = "uploads/";
+$target_dir = "upload/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

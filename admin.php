@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>4Shop1</title>
+	<title>4Shop</title>
 	<link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -139,7 +139,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -149,7 +149,7 @@ $i++;
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'adidas';
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'adidas';
 
                             
                              }); 
@@ -166,7 +166,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
 							
                      
                              }); 
@@ -208,7 +208,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -218,7 +218,7 @@ $i++;
                 "$(document).ready(function(){
                     $('.btn_delete".$i."').click(function(){
                        var _id = $('#shi_code".$i."').text();                          
-				window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'nike';
+				window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'nike';
 
              }); 
                   })".
@@ -232,7 +232,7 @@ $i++;
                var sizeUpdate =  $('#shi_size".$i."').text();   
                var nameUpdate =  $('#shi_name".$i."').text(); 
                var imgUpate = $('.shi_img".$i."').attr('src');    
-               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&brand='+'nike';                       
+               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&brand='+'nike';                       
 	
            
                    }); 
@@ -275,7 +275,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -285,7 +285,7 @@ $i++;
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();
                                var _brand =$('.tablinks').val();
-							window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'gucci';
+							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'gucci';
                              }); 
                     })".
              "</script>";
@@ -298,7 +298,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'gucci';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'gucci';                       
 							
                      
                              }); 
@@ -340,7 +340,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -350,7 +350,7 @@ $i++;
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();
                                var _brand =$('.tablinks').val();
-							window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'prada';
+							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'prada';
                              }); 
                     })".
              "</script>";
@@ -363,7 +363,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'prada';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'prada';                       
 							
                      
                              }); 
@@ -406,7 +406,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -416,7 +416,7 @@ $i++;
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();
                                var _brand =$('.tablinks').val();
-							window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'supreme';
+							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'supreme';
                              }); 
                     })".
              "</script>";
@@ -429,7 +429,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'supreme';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'supreme';                       
 							
                      
                              }); 
@@ -472,7 +472,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -481,7 +481,7 @@ $i++;
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'tommy_hilfiger';
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'tommy_hilfiger';
                             
                              }); 
                     })".
@@ -495,7 +495,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'tommy_hilfiger';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'tommy_hilfiger';                       
 							
                      
                              }); 
@@ -537,7 +537,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -547,7 +547,7 @@ $i++;
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();
                                var _brand =$('.tablinks').val();
-							window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'versace';
+							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'versace';
                              }); 
                     })".
              "</script>";
@@ -560,7 +560,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'versace';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'versace';                       
 							
                      
                              }); 
@@ -603,7 +603,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -613,7 +613,7 @@ $i++;
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'diesel';
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'diesel';
                             
                              }); 
                     })".
@@ -627,7 +627,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'diesel';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'diesel';                       
 							
                      
                              }); 
@@ -670,7 +670,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -680,7 +680,7 @@ $i++;
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'hugo_boss';
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'hugo_boss';
                             
                              }); 
                     })".
@@ -694,7 +694,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'hugo_boss';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'hugo_boss';                       
 							
                      
                              }); 
@@ -736,7 +736,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -746,7 +746,7 @@ $i++;
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'under_armour';
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'under_armour';
                             
                              }); 
                     })".
@@ -760,7 +760,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'under_armour';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'under_armour';                       
 							
                      
                              }); 
@@ -803,7 +803,7 @@ $i++;
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
-				"<td><img class='shi_img".$i."' src='uploads/".$row['image']."'/></td>".
+				"<td><img class='shi_img".$i."' src='upload/".$row['image']."'/></td>".
 				"<td>". $row["RegisterDate"]."</td>".
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
@@ -813,7 +813,7 @@ $i++;
                             $('.btn_delete".$i."').click(function(){
                                var _id = $('#shi_code".$i."').text();
                                var _brand =$('.tablinks').val();
-							window.location.href = 'http://localhost:81/4Shop1/delete.php?src='+_id+'&brand='+'puma';
+							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'puma';
                              }); 
                     })".
              "</script>";
@@ -826,7 +826,7 @@ $i++;
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop1/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'puma';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'puma';                       
 							
                      
                              }); 
