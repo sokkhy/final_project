@@ -341,13 +341,13 @@ ul.sub-menu {
 **************************/
 
 #footer {
-    background: #eb0606;
+    background: #F0F0E9;
 }
 #footer p{
-    color: #ffffff;
+    color: #000000;
 }
 #footer h2{
-    color: #ffffff;
+    color: #000000;
 }
 .footer-top .container {
     border-bottom: 1px solid #E0E0DA;
@@ -454,7 +454,7 @@ ul.sub-menu {
 }
 
 .address p {
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -468,12 +468,12 @@ ul.sub-menu {
 }
 
 .footer-widget .container {
-    border-top: 1px solid #FFFFFF;
+    border-top: 1px solid #000000;
     padding-top: 15px;
 }
 
 .single-widget h2 {
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -486,7 +486,7 @@ ul.sub-menu {
 }
 
 .single-widget ul li a {
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -499,7 +499,7 @@ ul.sub-menu {
 
 .single-widget ul li a:hover {
     background: none;
-    color: #ffffff;
+    color: #000000;
 }
 
 .searchform input {
@@ -523,7 +523,7 @@ ul.sub-menu {
 }
 
 .searchform button i {
-    color: #ffffff;
+    color: #000000;
     font-size: 20px;
 }
 
@@ -533,7 +533,7 @@ ul.sub-menu {
 }
 
 .searchform p {
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -546,7 +546,7 @@ ul.sub-menu {
 }
 
 .footer-bottom p {
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-left: 15px;

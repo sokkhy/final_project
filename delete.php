@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="refresh" content="0;URL='http://localhost:81/4Shop1/admin.php'" />
+	<meta http-equiv="refresh" content="0;URL='http://localhost:81/4Shop/admin.php'" />
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>

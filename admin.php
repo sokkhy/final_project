@@ -135,7 +135,8 @@ if ($result->num_rows > 0) {
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
+        "<td id='shi_code".$i."'>". $row["shirtCode"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -148,7 +149,7 @@ $i++;
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();                          
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'adidas';
 
                             
@@ -161,12 +162,13 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text(); 
+                               var codeUpdate =  $('#shi_code".$i."').text(); 
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
                                var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&CU='+codeUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
 							
                      
                              }); 
@@ -204,7 +206,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -217,7 +219,7 @@ $i++;
     $output.="<script>".
                 "$(document).ready(function(){
                     $('.btn_delete".$i."').click(function(){
-                       var _id = $('#shi_code".$i."').text();                          
+                       var _id = $('#shi_id".$i."').text();                          
 				window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'nike';
 
              }); 
@@ -227,7 +229,7 @@ $i++;
 
 				"$(document).ready(function(){
             $('.btn_update".$i."').click(function(){
-               var idUpdate = $('#shi_code".$i."').text();  
+               var idUpdate = $('#shi_id".$i."').text();  
                var priceUpdate = $('#shi_price".$i."').text();  
                var sizeUpdate =  $('#shi_size".$i."').text();   
                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -271,7 +273,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -283,7 +285,7 @@ $i++;
 		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();
+                               var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'gucci';
                              }); 
@@ -293,7 +295,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -336,7 +338,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -348,7 +350,7 @@ $i++;
 		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();
+                               var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'prada';
                              }); 
@@ -358,7 +360,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -397,12 +399,12 @@ $output.="</table>";
 		    <th style='width: 91px;'>Shirt Price</th>
 		    <th style='width:390px;'>Shirt Image</th>
 		    <th style='width:168px;'>Added Date</th>
-		   	<th colspan='4'>Action </th>
+		   	<th colspan='4'>Action</th>
 		  </tr>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -414,7 +416,7 @@ $i++;
 		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();
+                               var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'supreme';
                              }); 
@@ -424,7 +426,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -468,7 +470,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -480,7 +482,7 @@ $i++;
 	$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();                          
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'tommy_hilfiger';
                             
                              }); 
@@ -490,7 +492,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -533,7 +535,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -545,7 +547,7 @@ $i++;
 		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();
+                               var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'versace';
                              }); 
@@ -555,7 +557,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -599,7 +601,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -612,7 +614,7 @@ $i++;
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();                          
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'diesel';
                             
                              }); 
@@ -622,7 +624,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -666,7 +668,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -679,7 +681,7 @@ $i++;
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();                          
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'hugo_boss';
                             
                              }); 
@@ -689,7 +691,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -732,7 +734,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 		$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -745,7 +747,7 @@ $i++;
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();                          
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'under_armour';
                             
                              }); 
@@ -755,7 +757,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 
@@ -799,7 +801,7 @@ $output.="</table>";
  while($row = $result->fetch_assoc()) {
 $i++;
 	$output.= "<tr>".
-				"<td id='shi_code".$i."'>". $row["id"]. "</td>".
+				"<td id='shi_id".$i."'>". $row["id"]. "</td>".
 				"<td id='shi_name".$i."'>". $row["shirtName"]."</td>".
 				"<td id='shi_size".$i."'>". $row["shirtSize"]."</td>".
 				"<td id='shi_price".$i."'>". $row["Price"]."</td>".
@@ -811,7 +813,7 @@ $i++;
 		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_code".$i."').text();
+                               var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'puma';
                              }); 
@@ -821,7 +823,7 @@ $i++;
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_code".$i."').text();  
+                               var idUpdate = $('#shi_id".$i."').text();  
                                var priceUpdate = $('#shi_price".$i."').text();  
                                var sizeUpdate =  $('#shi_size".$i."').text();   
                                var nameUpdate =  $('#shi_name".$i."').text(); 

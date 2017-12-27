@@ -144,7 +144,7 @@
 		<div class="footer-bottom" style="background:#eb0606">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2018 4Shop. All rights reserved.</p>
+					<p class="pull-left" style="color:#fff">Copyright © 2018 4Shop. All rights reserved.</p>
 				</div>
 			</div>
 		</div>

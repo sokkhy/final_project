@@ -40,7 +40,8 @@ if ($result->num_rows > 0) {
  while($row = $result->fetch_assoc()) {
 
     $i++;
-       $output.= "Shirt Name: <input type='text' class='form-control' id='shirt_id".$i."''  name='shirtid' value='".$row["id"]."' readonly>".
+       $output.= "ID: <input type='text' class='form-control' id='shirt_id".$i."''  name='shirtid' value='".$row["id"]."' readonly>".
+       "Shirt Code: <input type='text' class='form-control' id='shirt_code".$i."''  name='shirtcode' value='".$row["shirtCode"]."'>".
         "Shirt Size: <input type='text' class='form-control' id='shirt_size".$i."''  name='shirtsize' value='".$row["shirtSize"]."'>".
           "Shirt Name: <input type='text' class='form-control' id='shirt_name".$i."''  name='shirtname' value='".$row["shirtName"]."'>".
           "Shirt Price: <input type='text' class='form-control' id='shirt_price".$i."''  name='shirtprice' value='".$row["Price"]."'>".
@@ -53,21 +54,18 @@ if ($result->num_rows > 0) {
               $(document).ready(function(){
     $('#submit".$i."').click(function(){
 
-              var idUpdate = $('#shirt_id".$i."').val();  
-                               var priceUpdate = $('#shirt_price".$i."').val();  
-                               var sizeUpdate =  $('#shirt_size".$i."').val();   
-                               var nameUpdate =  $('#shirt_name".$i."').val(); 
+                              var idUpdate = $('#shirt_id".$i."').val();  
+                              var codeUpdate = $('#shirt_code".$i."').val(); 
+                              var priceUpdate = $('#shirt_price".$i."').val();  
+                              var sizeUpdate =  $('#shirt_size".$i."').val();   
+                              var nameUpdate =  $('#shirt_name".$i."').val(); 
                               var b  ='".$brand."';
-                               window.location.href = 'http://localhost:81/4Shop/test.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&PU='+priceUpdate+'&brand='+b;      
+                               window.location.href = 'http://localhost:81/4Shop/get_updated.php?idU='+idUpdate+'&CU='+codeUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&PU='+priceUpdate+'&brand='+b;      
 
     });
 
   })
   </script>
-
-
-
-
     ";
       }
   } else {
