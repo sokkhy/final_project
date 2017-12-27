@@ -374,22 +374,23 @@ if ($conn->connect_error) {
 								<?php
 $output ="";
 $i = 0;
-$sql = "SELECT * FROM nike";
+$sql = "(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1)  UNION (SELECT * FROM hugo_boss limit 1)  UNION (SELECT * FROM puma limit 1)  UNION (SELECT * FROM supreme limit 1)  UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1)  UNION (SELECT * FROM versace limit 1) LIMIT 11";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'><!--features_items-->
-						<h2 class='title text-center'>Features Items</h2>";
+						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling TShirt</h2>";
  while($row = $result->fetch_assoc()) {
 $i++;
 	$output.="<div class='col-sm-4'>".
 			"<div class='product-image-wrapper'>".
 			"<div class='single-products'>";
-		$output.= "<div class='productinfo text-center' id='shi_code".$i."'>". $row["shirtCode"].
-				"<p id='shi_name".$i."'>". $row["shirtName"]."</p>".
-				"<p id='shi_size".$i."'>". $row["shirtSize"]."</p>".
+		$output.= "<div class='productinfo text-center'>".
+				"<span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>Code: ". $row["shirtCode"]."</span></br>".
+				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
+				"<span style='color:#0063ff; id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+				"<img style='width:200px;height:200px;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<img style='width:70%;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 		  "</div>";
 
  $output.="</div>";
