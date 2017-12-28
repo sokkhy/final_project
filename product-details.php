@@ -177,68 +177,79 @@
 						
 					</div>
 				</div>
-				
-				<div class="col-sm-9 padding-right">
-					<div class="product-details"><!--product-details-->
-						<div class="col-sm-5">
-							<div class="view-product">
-								<img src="images/product-details/1.jpg" alt="" />
-								<h3>ZOOM</h3>
-							</div>
-							<div id="similar-product" class="carousel slide" data-ride="carousel">
+				<?php
+				$output="";
+				 $spiltbrand = str_replace("_"," ",substr($_GET['CD'],5,10));
+				 $link = str_replace(" ", '%20',$_GET['ID']);
+				 $name = $_GET['ND'];
+				 $price =$_GET['PD'];
+				 $size = $_GET['SD'];
+				 $code = $_GET['CD'];
+				 $output.="<div class='col-sm-9 padding-right'>".
+					"<div class='product-details'>".
+						"<div class='col-sm-5'>".
+							"<div class='view-product'>".
+								"<div><img src=".$link." id='pic'></div>".
+							"</div>".
+							
+						// <div id="similar-product" class="carousel slide" data-ride="carousel">
 								
-								  <!-- Wrapper for slides -->
-								    <div class="carousel-inner">
-										<div class="item active">
-										  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
+								 
+						// 		    <div class="carousel-inner">
+						// 				<div class="item active">
+						// 				  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
+						// 				</div>
+						// 				<div class="item">
+						// 				  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
+						// 				</div>
+						// 				<div class="item">
+						// 				  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
+						// 				  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
+						// 				</div>
 										
-									</div>
+						// 			</div>
 
-								  <!-- Controls -->
-								  <a class="left item-control" href="javascript:similar-product" data-slide="prev">
-									<i class="fa fa-angle-left"></i>
-								  </a>
-								  <a class="right item-control" href="javascript:similar-product" data-slide="next">
-									<i class="fa fa-angle-right"></i>
-								  </a>
-							</div>
+								
+						// 		  <a class="left item-control" href="javascript:similar-product" data-slide="prev">
+						// 			<i class="fa fa-angle-left"></i>
+						// 		  </a>
+						// 		  <a class="right item-control" href="javascript:similar-product" data-slide="next">
+						// 			<i class="fa fa-angle-right"></i>
+						// 		  </a>
+						// 	</div> 
 
-						</div>
-						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-								<p>Web ID: 1089772</p>
-								<img src="images/product-details/rating.png" alt="" />
-								<span>
-									<span>US $59</span>
-									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
-								</span>
-								<p><b>Availability:</b> In Stock</p>
-								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> 4Shop</p>
-								<a href="javascript:"><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
-						</div>
-					</div><!--/product-details-->
+						"</div>".
+						"<div class='col-sm-7'>".
+							"<div class='product-information'>".
+								"<img src='images/product-details/new.jpg' class='newarrival' alt='' />".
+								"<h2>".$name."</h2>".
+								"<p>Shirt ".$code."</p>".
+								"<p style='font-weight: bolder;'>Available ".$size."</p>".
+								"<img src='images/product-details/rating.png' alt='' />".
+								"<span>".
+									"<span> US ".$price."</span>".
+									"<label>Quantity:</label>".
+									"<input type='text' value='3' />".
+									"<button type='button' class='btn btn-fefault cart'>".
+										"<i class='fa fa-shopping-cart'></i>".
+										"Add to cart".
+									"</button>".
+								"</span>".
+								"<p><b>Availability:</b> In Stock</p>".
+								"<p><b>Condition:</b> New</p>".
+								"<p><b>Brand:</b>".$spiltbrand."</p>".
+								"<a href='javascript:''><img src='images/product-details/share.png' class='share img-responsive'  alt='' /></a>".
+							"</div>".
+						"</div>".
+					"</div>";
+					print($output);
+							?>
+							<!--/product-details-->
 					
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">

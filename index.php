@@ -262,7 +262,7 @@ if ($conn->connect_error) {
 								<?php
 $output ="";
 $i = 0;
-$sql = "(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1)  UNION (SELECT * FROM hugo_boss limit 1)  UNION (SELECT * FROM puma limit 1)  UNION (SELECT * FROM supreme limit 1)  UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1)  UNION (SELECT * FROM versace limit 1) LIMIT 11";
+$sql ="(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugo_boss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
@@ -276,7 +276,7 @@ $i++;
 		$output.= "<div class='productinfo text-center'>".
 				"<span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>Code: ". $row["shirtCode"]."</span></br>".
 				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
-				"<span style='color:#0063ff; id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
 				"<img style='width:200px;height:200px;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
 		  "</div>";
@@ -284,6 +284,21 @@ $i++;
  $output.="</div>";
 $output.="</div>";
 $output.="</div>"; 		
+$output.="<script>".
+                "$(document).ready(function(){
+                    $('.shi_img".$i."').click(function(){
+                       var codeDetail =  $('#shi_code".$i."').text(); 
+                       var priceDetail = $('#shi_price".$i."').text();  
+                       var sizeDetail=  $('#shi_size".$i."').text();   
+                       var nameDetail =  $('#shi_name".$i."').text(); 
+                       var imgDetail = $('.shi_img".$i."').attr('src');    
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
+                    
+                     }); 
+
+                       
+                    })".
+             "</script>";
    		}
 	} else {
     echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
