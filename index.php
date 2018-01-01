@@ -53,7 +53,7 @@ if ($conn->connect_error) {
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+					<!-- <div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="javascript:slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="javascript:slider-carousel" data-slide-to="1"></li>
@@ -107,7 +107,7 @@ if ($conn->connect_error) {
 						<a href="javascript:slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
 							<i class="fa fa-angle-right"></i>
 						</a>
-					</div>
+					</div> -->
 					
 				</div>
 			</div>
@@ -279,9 +279,10 @@ $i++;
 				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
 				"<img style='width:200px;height:200px;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+				"<a href='javascript:' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a>".
 		  "</div>";
 
- $output.="</div>";
+ $output.="</div>"; 
 $output.="</div>";
 $output.="</div>"; 		
 $output.="<script>".
@@ -298,7 +299,21 @@ $output.="<script>".
 
                        
                     })".
+
              "</script>";
+$output.="<script>".
+    "$(document).ready(function(){
+    	var i = 0;
+        $('.addToCart').click(function(){
+        	i++;
+           $('#CartNm').text(i);
+        
+         }); 
+
+           
+        })".
+
+ "</script>";
    		}
 	} else {
     echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";

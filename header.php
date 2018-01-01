@@ -92,9 +92,18 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input style="color:black;" type="text" placeholder="Search"/>
+					<div class="col-sm-3" style="display:  inline-flex;position:  relative;">
+						<div class="search_box pull-right" style="width: 200px;">
+							<input style="color:black;margin-right: 200px;" type="text" placeholder="Search"/>
+						</div>
+						<div style="width: 200px;display: -webkit-box;margin-left: 192px;margin-top: -45px;">
+							<div style="margin-left:  -200px;margin-top: 51px;color: red;font-weight: bolder;">
+								<span>Your Cart</span>
+							</div>
+							<div>
+								<p id="CartNm" style="margin-top: 33px;margin-left: 20px;padding-top: 8px;position:  absolute;font-size: 1em;font-weight: bolder;color: red;">0</p>
+								<img src="cart.png" alt="" style="margin-top: 28px;width: 50px;height: 54px;">
+							</div>
 						</div>
 					</div>
 				</div>
