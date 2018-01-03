@@ -95,6 +95,7 @@ $amounts = array("19.99", "10.99", "2.99");
  <h2>Cart</h2>
  <table>
  <tr>
+ 
  <th>Product</th>
  <th width="10px">&nbsp;</th>
  <th>Qty</th>
