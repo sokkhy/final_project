@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	$host = "localhost";
 	 $user = "root";
 	 $password = "";
@@ -259,7 +259,7 @@ if ($conn->connect_error) {
 				
 				
 						
-								<?php
+<?php
 $output ="";
 $i = 0;
 $sql ="(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugo_boss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11";
