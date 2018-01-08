@@ -1,16 +1,6 @@
 <?php
-session_start();
-	$host = "localhost";
-	 $user = "root";
-	 $password = "";
-	 $database = "dbkeybest";
-
-  $conn = new mysqli($host, $user, $password, $database);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
+// include database configuration file
+include 'dbConfig.php';
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -262,8 +252,7 @@ if ($conn->connect_error) {
 <?php
 $output ="";
 $i = 0;
-$sql ="(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugo_boss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11";
-$result = $conn->query($sql);
+$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugo_boss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11");
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'>
@@ -279,10 +268,10 @@ $i++;
 				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
 				"<img style='width:200px;height:200px;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<a href='javascript:' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a>".
-		  "</div>";
+				"<a href='javascript:' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+		  
 
- $output.="</div>"; 
+ $output.="</div></div>"; 
 $output.="</div>";
 $output.="</div>"; 		
 $output.="<script>".
@@ -301,20 +290,23 @@ $output.="<script>".
                     })".
 
              "</script>";
+
+
 $output.="<script>".
     "$(document).ready(function(){
     	var i = 0;
         $('.addToCart').click(function(){
         	i++;
-           $('#CartNm').text(i);
-        
-         }); 
+         $('#CartNm').text(i);
+         
+    		
+         })
 
            
-        })".
+        })
 
- "</script>";
-   		}
+ </script>";
+   	 }
 	} else {
     echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
 }

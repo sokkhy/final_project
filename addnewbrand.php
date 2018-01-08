@@ -30,7 +30,7 @@ $shirt_brand =['','adidas','nike','gucci','prada','supreme','tommy_hilfiger','ve
 if ($result->num_rows > 0) {
     // output data of each row
    $output.="<div class='main'>"; 
-    while($row = $result->fetch_assoc()) {
+    while($row = $result->fetch_assoc()){
       $i++;
         $output.="
               
@@ -46,8 +46,7 @@ if ($result->num_rows > 0) {
                                 </script>
                               
         ";
-
-    }
+ }
     $output.= "</div>";
 } else {
     echo "0 results";
