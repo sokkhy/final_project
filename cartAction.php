@@ -8,8 +8,11 @@ include 'dbConfig.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['id'])){
         $productID = $_REQUEST['id'];
+        $shritbrand = $_REQUEST['brand'];
+        $brand = split ("_", $shritbrand);
+        echo "$brand[0]";
         // get product details
-        $query = $db->query("SELECT * FROM nike WHERE id = ".$productID);
+        $query = $db->query('SELECT * FROM '.$brand[0].'"  WHERE id =' .$productID);
         $row = $query->fetch_assoc();
         $itemData = array(
             'id' => $row['id'],
