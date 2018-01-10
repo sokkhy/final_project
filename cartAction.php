@@ -6,23 +6,26 @@ $cart = new Cart;
 // include database configuration file
 include 'dbConfig.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
-    if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['id'])){
+    if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['id']) &&  !empty($_REQUEST['brand'])){
         $productID = $_REQUEST['id'];
-        $shritbrand = $_REQUEST['brand'];
-        $brand = split ("_", $shritbrand);
-        echo "$brand[0]";
+        $shritbrand = $_GET['brand'];
+        $brand = explode ("_", $shritbrand);
+         $a = $brand[0];
+         echo $a;
         // get product details
-        $query = $db->query('SELECT * FROM '.$brand[0].'"  WHERE id =' .$productID);
+        $query = $db->query('SELECT * FROM '.$a.'  WHERE id =' .$productID);
+        
         $row = $query->fetch_assoc();
+
         $itemData = array(
             'id' => $row['id'],
             'name' => $row['shirtName'],
             'price' => $row['Price'],
             'qty' => 1
         );
-        
+     
         $insertItem = $cart->insert($itemData);
-        $redirectLoc = $insertItem?'viewCart.php':'index.php';
+        $redirectLoc = $insertItem?'viewCart.php':'index1.php';
         header("Location: ".$redirectLoc);
     }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
         $itemData = array(
@@ -59,8 +62,8 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             header("Location: checkout.php");
         }
     }else{
-        header("Location: index.php");
+        header("Location: index1.php");
     }
 }else{
-    header("Location: index.php");
+    header("Location: index1.php");
 }

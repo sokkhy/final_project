@@ -252,7 +252,7 @@ include 'dbConfig.php';
 <?php
 $output ="";
 $i = 0;
-$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugo_boss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommy_hilfiger limit 1) UNION (SELECT * FROM under_armour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11");
+$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugoboss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommyhilfiger limit 1) UNION (SELECT * FROM underarmour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11");
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'>
@@ -266,7 +266,7 @@ $i++;
 				"<span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>Code: ". $row["shirtCode"]."</span></br>".
 				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
 				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
-				"<img style='width:200px;height:200px;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
+				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
 				"<a href='javascript:' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
 		  

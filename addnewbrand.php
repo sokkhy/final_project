@@ -26,7 +26,7 @@ $sql = "SELECT * FROM category";
 $result = $conn->query($sql);
 $i =0;
 $output ="";
-$shirt_brand =['','adidas','nike','gucci','prada','supreme','tommy_hilfiger','versace','diesel','hugo_boss','under_armour','puma'];
+$shirt_brand =['','adidas','nike','gucci','prada','supreme','tommyhilfiger','versace','diesel','hugoboss','underarmour','puma'];
 if ($result->num_rows > 0) {
     // output data of each row
    $output.="<div class='main'>"; 
