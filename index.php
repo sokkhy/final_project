@@ -284,7 +284,7 @@ $output.="<script>".
                        var nameDetail =  $('#shi_name".$i."').text(); 
                        var imgDetail = $('.shi_img".$i."').attr('src');   
                        var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?ID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
                     
                      }); 
 

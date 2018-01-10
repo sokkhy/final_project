@@ -187,7 +187,7 @@
 				 $price =$_GET['PD'];
 				 $size = $_GET['SD'];
 				 $code = $_GET['CD'];
-				 $sid = $_GET['ID'];
+				 $sid = $_GET['SID'];
 				 $output.="<div class='col-sm-9 padding-right'>".
 					"<div class='product-details'>".
 						"<div class='col-sm-5'>".
