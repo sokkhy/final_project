@@ -18,7 +18,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $row = $query->fetch_assoc();
 
         $itemData = array(
-            'id' => $row['id'],
+            'id' => $row['shirtCode'],
             'name' => $row['shirtName'],
             'price' => $row['Price'],
             'qty' => 1
