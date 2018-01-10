@@ -6,11 +6,12 @@ $cart = new Cart;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>View Cart - PHP Shopping Cart Tutorial</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Cart | 4Shop</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
     <style>
     .container{padding: 50px;}
     input[type="number"]{width: 20%;}
