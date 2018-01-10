@@ -36,7 +36,8 @@ $cart = new Cart;
         <tr>
             <th>Product</th>
             <th>Price</th>
-            <th>Quantity</th>
+            <th>Image</th>
+            <th>Quantity</th> 
             <th>Subtotal</th>
             <th>&nbsp;</th>
         </tr>
@@ -51,6 +52,7 @@ $cart = new Cart;
         <tr>
             <td><?php echo $item["name"]; ?></td>
             <td><?php echo '$'.$item["price"].' USD'; ?></td>
+             <td><img class="shi_img" src="upload/'<?php echo '$'.$item["img"]; ?>'"/></td>
             <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
             <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
             <td>

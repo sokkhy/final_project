@@ -268,7 +268,7 @@ $i++;
 				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
 				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<a href='javascript:' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
 		  
 
  $output.="</div></div>"; 
@@ -297,7 +297,7 @@ $output.="<script>".
     	var i = 0;
         $('.addToCart').click(function(){
         	i++;
-         $('#CartNm').text(i);
+       
          
     		
          })

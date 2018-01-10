@@ -35,7 +35,7 @@ include 'dbConfig.php';
                     
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead"><?php echo '$'.$row["Price"].' USD'; ?></p>
+                            <p class="lead"><?php echo ''.$row["Price"].' USD'; ?></p>
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>&brand=<?php echo $row["shirtCode"]; ?>">Add to cart</a>

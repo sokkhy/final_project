@@ -21,6 +21,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             'id' => $row['shirtCode'],
             'name' => $row['shirtName'],
             'price' => $row['Price'],
+            'img' => $row['image'],
             'qty' => 1
         );
      

@@ -63,7 +63,7 @@ class Cart {
 		if(!is_array($item) OR count($item) === 0){
 			return FALSE;
 		}else{
-            if(!isset($item['id'], $item['name'], $item['price'], $item['qty'])){
+            if(!isset($item['id'], $item['name'], $item['price'], $item['qty'],$item['image'])){
                 return FALSE;
             }else{
                 /*
@@ -74,6 +74,11 @@ class Cart {
                 if($item['qty'] == 0){
                     return FALSE;
                 }
+                $filename    = $_FILES["image"]["tmp_name"];
+		    $destination = "upload/" . $_FILES["image"]["name"]; 
+		    move_uploaded_file($filename, $destination); //save uploaded picture in your directory
+
+		    $_SESSION['image'] = $destination;
                 // prep the price
                 $item['price'] = (float) $item['price'];
                 // create a unique identifier for the item being inserted into the cart
@@ -83,6 +88,7 @@ class Cart {
                 // re-create the entry with unique identifier and updated quantity
                 $item['rowid'] = $rowid;
                 $item['qty'] += $old_qty;
+                $item['image'] = $destination;
                 $this->cart_contents[$rowid] = $item;
                 
                 // save Cart Item
