@@ -179,12 +179,15 @@
 				</div>
 				<?php
 				$output="";
-				 $spiltbrand = str_replace("_"," ",substr($_GET['CD'],5,10));
+				 $spiltbrand = explode("_",$_GET['CD']);
+				 $brand = $spiltbrand[0];
+				 echo $brand;
 				 $link = str_replace(" ", '%20',$_GET['ID']);
 				 $name = $_GET['ND'];
 				 $price =$_GET['PD'];
 				 $size = $_GET['SD'];
 				 $code = $_GET['CD'];
+				 $sid = $_GET['ID'];
 				 $output.="<div class='col-sm-9 padding-right'>".
 					"<div class='product-details'>".
 						"<div class='col-sm-5'>".
@@ -235,14 +238,11 @@
 									"<span> US ".$price."</span>".
 									"<label>Quantity:</label>".
 									"<input type='text' value='3' />".
-									"<button type='button' class='btn btn-fefault cart'>".
-										"<i class='fa fa-shopping-cart'></i>".
-										"Add to cart".
-									"</button>".
+									"<a href='cartAction.php?action=addToCart&id=".$sid."&brand=".$code."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>".
 								"</span>".
 								"<p><b>Availability:</b> In Stock</p>".
 								"<p><b>Condition:</b> New</p>".
-								"<p><b>Brand:</b>".$spiltbrand."</p>".
+								"<p><b>Brand:</b>".$brand."</p>".
 								"<a href='javascript:''><img src='images/product-details/share.png' class='share img-responsive'  alt='' /></a>".
 							"</div>".
 						"</div>".

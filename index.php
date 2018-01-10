@@ -263,11 +263,12 @@ $i++;
 			"<div class='product-image-wrapper'>".
 			"<div class='single-products'>";
 		$output.= "<div class='productinfo text-center'>".
-				"<span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>Code: ". $row["shirtCode"]."</span></br>".
+				"Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
 				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
 				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
 				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
 				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
 		  
 
@@ -281,8 +282,9 @@ $output.="<script>".
                        var priceDetail = $('#shi_price".$i."').text();  
                        var sizeDetail=  $('#shi_size".$i."').text();   
                        var nameDetail =  $('#shi_name".$i."').text(); 
-                       var imgDetail = $('.shi_img".$i."').attr('src');    
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
+                       var imgDetail = $('.shi_img".$i."').attr('src');   
+                       var id = $('#sid".$i."').text();
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?ID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
                     
                      }); 
 
