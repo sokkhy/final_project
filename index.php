@@ -1,6 +1,29 @@
 <?php
 // include database configuration file
 include 'dbConfig.php';
+$query = $db->query('SELECT COUNT(*) as adidas_total FROM adidas');
+$row = $query->fetch_assoc();
+$query1 = $db->query('SELECT COUNT(*) as nike_total FROM nike');
+$row1 = $query1->fetch_assoc();
+$query2 = $db->query('SELECT COUNT(*) as diesel_total FROM diesel');
+$row2 = $query2->fetch_assoc();
+$query3 = $db->query('SELECT COUNT(*) as puma_total FROM puma');
+$row3 = $query3->fetch_assoc();
+$query4 = $db->query('SELECT COUNT(*) as prada_total FROM prada');
+$row4 = $query4->fetch_assoc();
+$query5 = $db->query('SELECT COUNT(*) as versace_total FROM versace');
+$row5 = $query5->fetch_assoc();
+$query6 = $db->query('SELECT COUNT(*) as tommyhilfiger_total FROM tommyhilfiger');
+$row6 = $query6->fetch_assoc();
+$query7 = $db->query('SELECT COUNT(*) as hugoboss_total FROM hugoboss');
+$row7 = $query7->fetch_assoc();
+$query8 = $db->query('SELECT COUNT(*) as underarmour_total FROM underarmour');
+$row8 = $query8->fetch_assoc();
+$query9 = $db->query('SELECT COUNT(*) as supreme_total FROM supreme');
+$row9 = $query9->fetch_assoc();
+$query10 = $db->query('SELECT COUNT(*) as gucci_total FROM gucci');
+$row10 = $query10->fetch_assoc();
+
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -217,24 +240,24 @@ include 'dbConfig.php';
 							</div>
 						</div> --><!--/category-products-->
 					
-						<div class="brands_products"><!--brands_products-->
-							<h2>Brands</h2>
-							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
-									<li><a href="javascript:"> <span class="pull-right">(50)</span>Adidas</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(56)</span>Diesel</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(27)</span>Gucci</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(32)</span>Hugo Boss</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(5)</span>Nike</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(9)</span>Prada</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(4)</span>Puma</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(5)</span>Supreme</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(9)</span>Tommy Hilfiger</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(4)</span>Under Armour</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(5)</span>Versace</a></li>
-								</ul>
-							</div>
-						</div><!--/brands_products-->
+					<div class="brands_products"><!--brands_products-->
+						<h2>Brands</h2>
+						<div class="brands-name">
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="adidas.php"> <span class="pull-right">(<?php echo $row['adidas_total'] ?>)</span>Adidas</a></li>
+								<li><a href="diesel.php"> <span class="pull-right">(<?php echo $row2['diesel_total'] ?>)</span>Diesel</a></li>
+								<li><a href="gucci.php"> <span class="pull-right">(<?php echo $row10['gucci_total'] ?>)</span>Gucci</a></li>
+								<li><a href="hugo_boss.php"> <span class="pull-right">(<?php echo $row7['hugoboss_total'] ?>)</span>Hugo Boss</a></li>
+								<li><a href="nike.php"> <span class="pull-right">(<?php echo $row1['nike_total'] ?>)</span>Nike</a></li>
+								<li><a href="prada.php"> <span class="pull-right">(<?php echo $row4['prada_total'] ?>)</span>Prada</a></li>
+								<li><a href="puma.php"> <span class="pull-right">(<?php echo $row3['puma_total'] ?>)</span>Puma</a></li>
+								<li><a href="supreme.php"> <span class="pull-right">(<?php echo $row9['supreme_total'] ?>)</span>Supreme</a></li>
+								<li><a href="tommy_hilfiger.php"> <span class="pull-right">(<?php echo $row6['tommyhilfiger_total'] ?>)</span>Tommy Hilfiger</a></li>
+								<li><a href="under_armour.php"> <span class="pull-right">(<?php echo $row8['underarmour_total'] ?>)</span>Under Armour</a></li>
+								<li><a href="versace.php"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
+							</ul>
+						</div>
+					</div><!--/brands_products-->
 						
 						<!-- <div class="price-range">
 							<h2>Price Range</h2>
