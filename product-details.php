@@ -181,7 +181,7 @@
 				$output="";
 				 $spiltbrand = explode("_",$_GET['CD']);
 				 $brand = $spiltbrand[0];
-				 echo $brand;
+				 //echo $brand;
 				 $link = str_replace(" ", '%20',$_GET['ID']);
 				 $name = $_GET['ND'];
 				 $price =$_GET['PD'];
@@ -231,7 +231,6 @@
 							"<div class='product-information'>".
 								"<img src='images/product-details/new.jpg' class='newarrival' alt='' />".
 								"<h2>".$name."</h2>".
-								"<p>Shirt ".$code."</p>".
 								"<p style='font-weight: bolder;'>Available ".$size."</p>".
 								"<img src='images/product-details/rating.png' alt='' />".
 								"<span>".

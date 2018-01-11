@@ -107,10 +107,10 @@ include 'dbConfig.php';
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-3" style="margin-left: -201px;">
 					<div class="left-sidebar">
-						<h2>Category</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<!-- <h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -215,30 +215,34 @@ include 'dbConfig.php';
 									<h4 class="panel-title"><a href="javascript:">Shoes</a></h4>
 								</div>
 							</div>
-						</div><!--/category-products-->
+						</div> --><!--/category-products-->
 					
 						<div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="javascript:"> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(27)</span>Albiro</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(32)</span>Ronhill</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href="javascript:"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(50)</span>Adidas</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(56)</span>Diesel</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(27)</span>Gucci</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(32)</span>Hugo Boss</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(5)</span>Nike</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(9)</span>Prada</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(4)</span>Puma</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(5)</span>Supreme</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(9)</span>Tommy Hilfiger</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(4)</span>Under Armour</a></li>
+									<li><a href="javascript:"> <span class="pull-right">(5)</span>Versace</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
 						
-						<div class="price-range"><!--price-range-->
+						<!-- <div class="price-range">
 							<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
-						</div><!--/price-range-->
+						</div> --><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
 							<img src="images/home/shipping.jpg" alt="" />
@@ -467,7 +471,7 @@ $output.="</div>";
 						
 					</div --><!--features_items-->
 					
-					<div class="category-tab"><!--category-tab-->
+					<!-- <div class="category-tab">
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="javascript:tshirt" data-toggle="tab">T-Shirt</a></li>
@@ -753,9 +757,9 @@ $output.="</div>";
 								</div>
 							</div>
 						</div>
-					</div><!--/category-tab-->
+					</div> --><!--/category-tab-->
 					
-					<div class="recommended_items"><!--recommended_items-->
+					<!-- <div class="recommended_items">
 						<h2 class="title text-center">recommended items</h2>
 						
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -850,7 +854,7 @@ $output.="</div>";
 								<i class="fa fa-angle-right"></i>
 							  </a>			
 						</div>
-					</div><!--/recommended_items-->
+					</div> --><!--/recommended_items-->
 					
 				</div>
 			</div>

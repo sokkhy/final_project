@@ -63,9 +63,8 @@
 							  <ul role="menu" class="sub-menu">
 							  		<li><a href="index.php" class="active">Home</a></li> 
 	                                <li><a href="shop.php">Products</a></li>
-									<li><a href="product-details.php">Product Details</a></li> 
 									<li><a href="checkout.php">Checkout</a></li> 
-									<li><a href="cart.php">Cart</a></li> 
+									<li><a href="ViewCart.php">Cart</a></li> 
 									<li><a href="login.php">Login</a></li> 
 	                            </ul>
 						</div>
@@ -84,9 +83,8 @@
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php" class="active">Home</a></li> 
                                 <li><a href="shop.php">Products</a></li>
-								<li><a href="product-details.php">Product Details</a></li> 
 								<li><a href="checkout.php">Checkout</a></li> 
-								<li><a href="cart.php">Cart</a></li> 
+								<li><a href="viewCart.php">Cart</a></li> 
 								<li><a href="login.php">Login</a></li> 
 								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
