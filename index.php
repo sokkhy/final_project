@@ -130,7 +130,7 @@ $row10 = $query10->fetch_assoc();
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3" style="margin-left: -201px;">
+				<div class="col-sm-3" style="margin-left: -23px;">
 					<div class="left-sidebar">
 						<!-- <h2>Category</h2>
 						<div class="panel-group category-products" id="accordian">
