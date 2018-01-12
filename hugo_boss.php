@@ -23,9 +23,7 @@ $row8 = $query8->fetch_assoc();
 $query9 = $db->query('SELECT COUNT(*) as supreme_total FROM supreme');
 $row9 = $query9->fetch_assoc();
 $query10 = $db->query('SELECT COUNT(*) as gucci_total FROM gucci');
-$row10 = $query10->fetch_assoc();
-
- 
+$row10 = $query10->fetch_assoc(); 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +74,7 @@ $row10 = $query10->fetch_assoc();
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3" style="margin-left: -201px;">
+				<div class="col-sm-3" style="margin-left: -23px;">
 					<div class="left-sidebar">
 						<div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
@@ -101,10 +99,7 @@ $row10 = $query10->fetch_assoc();
 						</div><!--/shipping-->
 					
 					</div>
-				</div>
-				
-				
-						
+				</div>					
 <?php
 $output ="";
 $i = 0;

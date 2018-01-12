@@ -76,7 +76,7 @@ $row10 = $query10->fetch_assoc();
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3" style="margin-left: -201px;">
+				<div class="col-sm-3" style="margin-left: -23px;">
 					<div class="left-sidebar">
 						<div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
@@ -101,10 +101,7 @@ $row10 = $query10->fetch_assoc();
 						</div><!--/shipping-->
 					
 					</div>
-				</div>
-				
-				
-						
+				</div>						
 <?php
 $output ="";
 $i = 0;

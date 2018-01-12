@@ -97,7 +97,7 @@
 							<div style="margin-left:  -200px;margin-top: 51px;color: red;font-weight: bolder;">
 								<span>Your Cart</span>
 							</div>
-							<div>
+							<div style="cursor:pointer;" id="cart">
 								<p id="CartNm" style="margin-top: 33px;margin-left: 20px;padding-top: 8px;position:  absolute;font-size: 1em;font-weight: bolder;color: red;">0</p>
 								<img src="cart.png" alt="" style="margin-top: 28px;width: 50px;height: 54px;">
 							</div>
@@ -107,3 +107,11 @@
 			</div>
 		</div><!--/header-bottom-->
 	</header>
+
+<script>
+$(document).ready(function(){
+  $("#cart").click(function(){
+      window.location.href = "http://localhost:81/4Shop/viewCart.php"; 
+  })
+});
+</script>

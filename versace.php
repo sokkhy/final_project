@@ -72,11 +72,10 @@ $row10 = $query10->fetch_assoc();
 			</div>
 		</div>
 	</section><!--/slider-->
-	
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3" style="margin-left: -201px;">
+				<div class="col-sm-3" style="margin-left: -23px;">
 					<div class="left-sidebar">
 						<div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
@@ -101,10 +100,7 @@ $row10 = $query10->fetch_assoc();
 						</div><!--/shipping-->
 					
 					</div>
-				</div>
-				
-				
-						
+				</div>					
 <?php
 $output ="";
 $i = 0;
@@ -126,8 +122,6 @@ $i++;
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
 				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
 				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-		  
-
  $output.="</div></div>"; 
 $output.="</div>";
 $output.="</div>"; 		
@@ -142,26 +136,17 @@ $output.="<script>".
                        var id = $('#sid".$i."').text();
                        window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
                     
-                     }); 
-
-                       
+                     });    
                     })".
-
-             "</script>";
-
+ "</script>";
 
 $output.="<script>".
     "$(document).ready(function(){
     	var i = 0;
         $('.addToCart').click(function(){
         	i++;
-       
-         
-    		
          })
-
-           
-        })
+     })
 
  </script>";
    	 }
@@ -172,14 +157,12 @@ $output.="<script>".
 $output.="</div>";
 $output.="</div>";
  print($output);
-
-
 ?>
 </div>
-				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 <?php include 'footer.php';?>	
 <!--/Footer-->
     <script src="js/jquery.js"></script>
