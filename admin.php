@@ -863,7 +863,6 @@ function eachbrand(evt, brancname) {
     document.getElementById(brancname).style.display = "block";
     evt.currentTarget.className += " active";
 }
-</script>
-     
+</script>    
 </body>
 </html> 

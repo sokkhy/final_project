@@ -49,7 +49,7 @@ $cart = new Cart;
 <body>
     <?php include 'header.php';?>
 <div class="container">
-    <h1>Shopping Cart</h1>
+    <h1>Your Items</h1>
     <table class="table">
     <thead>
         <tr>
@@ -70,10 +70,10 @@ $cart = new Cart;
         ?>
         <tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo '$'.$item["price"]; ?></td>
             <td><img class="shi_img" src="upload/<?php echo $item["img"]; ?>"/></td>
             <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '$'.$item["subtotal"]; ?></td>
             <td>
                 <!-- <a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a> -->
                 <a href="cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>

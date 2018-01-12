@@ -62,8 +62,7 @@
 						<div class="shop-menu clearfix pull-right">
 							  <ul role="menu" class="sub-menu">
 							  		<li><a href="index.php" class="active">Home</a></li> 
-	                                <li><a href="shop.php">Products</a></li>
-									<li><a href="checkout.php">Checkout</a></li> 
+	                                <li><a href="shop.php">Products</a></li> 
 									<li><a href="ViewCart.php">Cart</a></li> 
 									<li><a href="login.php">Login</a></li> 
 	                            </ul>

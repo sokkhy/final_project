@@ -108,7 +108,7 @@ $row10 = $query10->fetch_assoc();
 <?php
 $output ="";
 $i = 0;
-$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugoboss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommyhilfiger limit 1) UNION (SELECT * FROM underarmour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11");
+$result =$db->query ("SELECT * FROM puma LIMIT 12");
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'>
