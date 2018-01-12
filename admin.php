@@ -454,7 +454,7 @@ $output.="</table>";
 <div id="tommy_hilfiger" class="tabcontent">
 <?php
 	$output ="";
-	$sql = "SELECT * FROM tommy_hilfiger";
+	$sql = "SELECT * FROM tommyhilfiger";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
    $output.= "<table id='customers'>".
@@ -652,7 +652,7 @@ $output.="</table>";
 <div id="hugo_boss" class="tabcontent">
 <?php
 	$output ="";
-	$sql = "SELECT * FROM hugo_boss";
+	$sql = "SELECT * FROM hugoboss";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
    $output.= "<table id='customers'>".
@@ -718,7 +718,7 @@ $output.="</table>";
 <div id="under_armour" class="tabcontent">
 <?php
 	$output ="";
-	$sql = "SELECT * FROM under_armour";
+	$sql = "SELECT * FROM underarmour";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
    $output.= "<table id='customers'>".
