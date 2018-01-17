@@ -2,9 +2,9 @@
 
 class DBController {
 	private $host = "localhost";
-	private $user = "root";
-	private $password = "";
-	private $database = "dbkeybest";
+	private $user = "id4311650_root";
+	private $password = "010910651pike";
+	private $database = "id4311650_dbkeybest";
 	private $conn;
 	
 

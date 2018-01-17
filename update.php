@@ -61,13 +61,11 @@ if ($result->num_rows > 0) {
                               var nameUpdate =  $('#shirt_name".$i."').val(); 
                               var b  ='".$brand."';
                                window.location.href = 'http://localhost:81/4Shop/get_updated.php?idU='+idUpdate+'&CU='+codeUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&PU='+priceUpdate+'&brand='+b;      
-
-    });
-
-  })
+                              });
+                           })
   </script>
     ";
-      }
+    }
   } else {
     echo "No Data";
 }
