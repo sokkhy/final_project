@@ -114,17 +114,17 @@ include 'productCount.php';
 						<h2>Brands</h2>
 						<div class="brands-name">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="adidas.php"> <span class="pull-right">(<?php echo $row['adidas_total'] ?>)</span>Adidas</a></li>
-								<li><a href="diesel.php"> <span class="pull-right">(<?php echo $row2['diesel_total'] ?>)</span>Diesel</a></li>
-								<li><a href="gucci.php"> <span class="pull-right">(<?php echo $row10['gucci_total'] ?>)</span>Gucci</a></li>
-								<li><a href="hugo_boss.php"> <span class="pull-right">(<?php echo $row7['hugoboss_total'] ?>)</span>Hugo Boss</a></li>
-								<li><a href="nike.php"> <span class="pull-right">(<?php echo $row1['nike_total'] ?>)</span>Nike</a></li>
-								<li><a href="prada.php"> <span class="pull-right">(<?php echo $row4['prada_total'] ?>)</span>Prada</a></li>
-								<li><a href="puma.php"> <span class="pull-right">(<?php echo $row3['puma_total'] ?>)</span>Puma</a></li>
-								<li><a href="supreme.php"> <span class="pull-right">(<?php echo $row9['supreme_total'] ?>)</span>Supreme</a></li>
-								<li><a href="tommy_hilfiger.php"> <span class="pull-right">(<?php echo $row6['tommyhilfiger_total'] ?>)</span>Tommy Hilfiger</a></li>
-								<li><a href="under_armour.php"> <span class="pull-right">(<?php echo $row8['underarmour_total'] ?>)</span>Under Armour</a></li>
-								<li><a href="versace.php"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
+								<li><a href="adidas.php" id="adidas"> <span class="pull-right">(<?php echo $row['adidas_total'] ?>)</span>Adidas</a></li>
+								<li><a href="diesel.php" id="diesel"> <span class="pull-right">(<?php echo $row2['diesel_total'] ?>)</span>Diesel</a></li>
+								<li><a href="gucci.php" id="gucci"> <span class="pull-right">(<?php echo $row10['gucci_total'] ?>)</span>Gucci</a></li>
+								<li><a href="hugo_boss.php" id="hugoboss"> <span class="pull-right">(<?php echo $row7['hugoboss_total'] ?>)</span>Hugo Boss</a></li>
+								<li><a href="nike.php" id="nike"> <span class="pull-right">(<?php echo $row1['nike_total'] ?>)</span>Nike</a></li>
+								<li><a href="prada.php" id="prada"> <span class="pull-right">(<?php echo $row4['prada_total'] ?>)</span>Prada</a></li>
+								<li><a href="puma.php" id="puma"> <span class="pull-right">(<?php echo $row3['puma_total'] ?>)</span>Puma</a></li>
+								<li><a href="supreme.php" id="supreme"> <span class="pull-right">(<?php echo $row9['supreme_total'] ?>)</span>Supreme</a></li>
+								<li><a href="tommy_hilfiger.php" id="tommyhilfiger"> <span class="pull-right">(<?php echo $row6['tommyhilfiger_total'] ?>)</span>Tommy Hilfiger</a></li>
+								<li><a href="under_armour.php" id="underarmour"> <span class="pull-right">(<?php echo $row8['underarmour_total'] ?>)</span>Under Armour</a></li>
+								<li><a href="versace.php" id="versace"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
 							</ul>
 						</div>
 					</div><!--/brands_products-->
