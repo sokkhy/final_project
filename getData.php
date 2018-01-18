@@ -7,7 +7,7 @@ if(isset($_POST['page'])){
     include('dbCon.php');
     
     $start = !empty($_POST['page'])?$_POST['page']:0;
-    $limit = 3;
+    $limit = 12;
     
     //set conditions for search
     $whereSQL = $orderSQL = '';
@@ -46,15 +46,7 @@ if(isset($_POST['page'])){
                 $postID = $row['id'];
         ?>
             <div class="list_item"><a href="javascript:void(0);"><h2><?php echo $row["shirtName"]; ?></h2></a></div>
-        <?php }  ?>
+        <?php } ?>
         </div>
         <?php echo $pagination->createLinks(); ?>
-<?php }else{
-    ?>
-
- <h1>Not found!</h1>
- <?php
-}
-
-
- } ?>
+<?php } } ?>

@@ -1,11 +1,4 @@
 <?php
-/**
- * CodexWorld is a programming blog. Our mission is to provide the best online resources on programming and web development.
- *
- * This Pagination class helps to integrate ajax pagination in PHP.
- *
- * @version		1.0
- */
 class Pagination{
 	var $baseURL		= '';
 	var $totalRows  	= '';
@@ -72,7 +65,7 @@ class Pagination{
 		// Is there only one page? will not need to continue
 		if ($numPages == 1){
 			if ($this->showCount){
-				$info = 'Showing : ' . $this->totalRows;
+				$info = 'Result : ' . $this->totalRows;
 				return $info;
 			}else{
 				return '';

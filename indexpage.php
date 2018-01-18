@@ -25,7 +25,6 @@ function searchFilter(page_num) {
 </script>
 </head>
 <body>
-
 <div class="post-search-panel">
     <input type="text" id="keywords" placeholder="Type keywords to filter posts" onkeyup="searchFilter()"/>
     <select id="sortBy" onchange="searchFilter()">
@@ -44,7 +43,7 @@ function searchFilter(page_num) {
     //Include database configuration file
     include('dbcon.php');
     
-    $limit = 1;
+    $limit = 12;
     
     //get number of rows
     $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");

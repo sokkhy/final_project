@@ -2,6 +2,23 @@
 // include database configuration file
 include 'dbConfig.php';
 include 'productCount.php';
+include('Pagination.php');
+ 
+    $limit = 12;
+    
+    //get number of rows
+    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");
+    $resultNum = $queryNum->fetch_assoc();
+    $rowCount = $resultNum['postNum'];
+    
+    //initialize pagination class
+    $pagConfig = array(
+        'totalRows' => $rowCount,
+        'perPage' => $limit,
+        'link_func' => 'searchFilter'
+    );
+    $pagination =  new Pagination($pagConfig);
+    $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +51,26 @@ include 'productCount.php';
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<script>
+function searchFilter(page_num) {
+    page_num = page_num?page_num:0;
+    var keywords = $('#keywords').val();
+    var sortBy = $('#sortBy').val();
+    $.ajax({
+        type: 'POST',
+        url: 'getData.php',
+        data:'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
+        beforeSend: function () {
+            $('.loading-overlay').show();
+        },
+        success: function (html) {
+            $('#posts_content').html(html);
+            $('.loading-overlay').fadeOut("slow");
+        }
+    });
+}
+</script>
 </head><!--/head--><!--/head-->
 
 <body>
@@ -81,12 +117,13 @@ include 'productCount.php';
 <?php
 $output ="";
 $i = 0;
-$result =$db->query ("SELECT * FROM adidas LIMIT 12");
-if ($result->num_rows > 0) {
-  $output.="<div class='col-sm-9 padding-right'>
+ if($query->num_rows > 0){ 
+$output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'>
 						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
- while($row = $result->fetch_assoc()) {
+while($row = $query->fetch_assoc()){ 
+                $postID = $row['id'];
+
 $i++;
 	$output.="<div class='col-sm-4'>".
 			"<div class='product-image-wrapper'>".
@@ -121,33 +158,17 @@ $output.="<script>".
                     })".
 
              "</script>";
-
-
-$output.="<script>".
-    "$(document).ready(function(){
-    	var i = 0;
-        $('.addToCart').click(function(){
-        	i++;
-       
-         
-    		
-         })
-
-           
-        })
-
- </script>";
-   	 }
-	} else {
-    echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
 }
-
-$output.="</div>";
-$output.="</div>";
- print($output);
-
-
 ?>
+<?php echo $pagination->createLinks(); ?>
+<?php
+$output.="</div>";
+$output.="</div>";
+print($output);
+ }
+?>
+
+
 </div>
 				</div>
 			</div>
