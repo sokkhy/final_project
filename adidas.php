@@ -2,23 +2,6 @@
 // include database configuration file
 include 'dbConfig.php';
 include 'productCount.php';
-include('Pagination.php');
- 
-    $limit = 12;
-    
-    //get number of rows
-    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");
-    $resultNum = $queryNum->fetch_assoc();
-    $rowCount = $resultNum['postNum'];
-    
-    //initialize pagination class
-    $pagConfig = array(
-        'totalRows' => $rowCount,
-        'perPage' => $limit,
-        'link_func' => 'searchFilter'
-    );
-    $pagination =  new Pagination($pagConfig);
-    $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +34,12 @@ include('Pagination.php');
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-<script>
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head><!--/head--><!--/head-->
+
+<body>
+	<?php include 'header.php';?><!--/header-->
+	<script>
 function searchFilter(page_num) {
     page_num = page_num?page_num:0;
     var keywords = $('#keywords').val();
@@ -71,11 +58,6 @@ function searchFilter(page_num) {
     });
 }
 </script>
-</head><!--/head--><!--/head-->
-
-<body>
-	<?php include 'header.php';?><!--/header-->
-	
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -114,33 +96,61 @@ function searchFilter(page_num) {
 					
 					</div>
 				</div>					
-<?php
-$output ="";
+
+<div class="post-wrapper">
+    <div class="loading-overlay"><div class="overlay-content">Loading.....</div>
+</div>
+    <div id="posts_content">
+    <?php
+    //Include pagination class file
+    include('Pagination.php');
+    
+    //Include database configuration file
+    include('dbcon.php');
+    
+    $limit = 12;
+    
+    //get number of rows
+    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");
+    $resultNum = $queryNum->fetch_assoc();
+    $rowCount = $resultNum['postNum'];
+    
+    //initialize pagination class
+    $pagConfig = array(
+        'totalRows' => $rowCount,
+        'perPage' => $limit,
+        'link_func' => 'searchFilter'
+    );
+    $pagination =  new Pagination($pagConfig);
+    
+    //get rows
+    $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
+   $output ="";
 $i = 0;
  if($query->num_rows > 0){ 
 $output.="<div class='col-sm-9 padding-right'>
-					<div class='features_items'>
-						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
+                    <div class='features_items'>
+                        <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
 while($row = $query->fetch_assoc()){ 
                 $postID = $row['id'];
 
 $i++;
-	$output.="<div class='col-sm-4'>".
-			"<div class='product-image-wrapper'>".
-			"<div class='single-products'>";
-		$output.= "<div class='productinfo text-center'>".
-				"Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
-				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
-				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
-				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
-				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
-				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-		  
+    $output.="<div class='col-sm-4'>".
+            "<div class='product-image-wrapper'>".
+            "<div class='single-products'>";
+        $output.= "<div class='productinfo text-center'>".
+                "Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
+                "<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
+                "<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+                "<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
+                "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+                "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
+                "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+          
 
  $output.="</div></div>"; 
 $output.="</div>";
-$output.="</div>"; 		
+$output.="</div>";      
 $output.="<script>".
                 "$(document).ready(function(){
                     $('.shi_img".$i."').click(function(){
@@ -160,19 +170,18 @@ $output.="<script>".
              "</script>";
 }
 ?>
-<?php echo $pagination->createLinks(); ?>
+
 <?php
 $output.="</div>";
 $output.="</div>";
 print($output);
  }
 ?>
-
+<?php echo $pagination->createLinks(); ?>
 
 </div>
-				</div>
-			</div>
 		</div>
+	
 	</section>
 <?php include 'footer.php';?>	
 <!--/Footer-->

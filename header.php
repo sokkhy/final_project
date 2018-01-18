@@ -91,7 +91,12 @@
 					</div>
 					<div class="col-sm-3" style="display:  inline-flex;position:  relative;">
 						<div class="search_box pull-right" style="width: 200px;">
-							<input style="color:black;margin-right: 200px;" type="text" placeholder="Search"/>
+							<input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search" onkeyup="searchFilter()"/>
+<!-- 							   <select id="sortBy" onchange="searchFilter()">
+							        <option value="">Sort By</option>
+							        <option value="asc">Ascending</option>
+							        <option value="desc">Descending</option>
+							    </select> -->
 						</div>
 						<div style="width: 200px;display: -webkit-box;margin-left: 192px;margin-top: -45px;">
 							<div style="margin-left:  -200px;margin-top: 51px;color: red;font-weight: bolder;">
