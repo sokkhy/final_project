@@ -96,10 +96,6 @@ function searchFilter(page_num) {
 					
 					</div>
 				</div>					
-
-<div class="post-wrapper">
-    <div class="loading-overlay"><div class="overlay-content">Loading.....</div>
-</div>
     <div id="posts_content">
     <?php
     //Include pagination class file

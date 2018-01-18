@@ -5,16 +5,17 @@ class Pagination{
 	var $perPage	 	= 2;
 	var $numLinks		=  3;
 	var $currentPage	=  0;
-	var $firstLink   	= '&lsaquo; First';
-	var $nextLink		= '&gt;';
-	var $prevLink		= '&lt;';
-	var $lastLink		= 'Last &rsaquo;';
-	var $fullTagOpen	= '<div class="pagination">';
+	var $firstLink   	= 'First';
+	var $nextLink		= '<span style="font-size:1.7em;">Next</span>';
+	var $prevLink		= '<span style="font-size:1.7em;">Previous</span>';
+	var $noprev 		= '<span style="font-size:1.7em;cursor: grab;">Previous</span>';
+	var $lastLink		= 'Last';
+	var $fullTagOpen	= '<div class="pagination" style="margin-left:500px;background-color: #b0b0b0;">';
 	var $fullTagClose	= '</div>';
 	var $firstTagOpen	= '';
 	var $firstTagClose	= '&nbsp;';
 	var $lastTagOpen	= '&nbsp;';
-	var $lastTagClose	= '';
+	var $lastTagClose	= '&nbsp;';
 	var $curTagOpen		= '&nbsp;<b>';
 	var $curTagClose	= '</b>';
 	var $nextTagOpen	= '&nbsp;';
@@ -81,19 +82,19 @@ class Pagination{
 		$output = '';
 		
 		// Showing links notification
-		if ($this->showCount){
-		   $currentOffset = $this->currentPage;
-		   $info = 'Showing ' . ( $currentOffset + 1 ) . ' to ' ;
-		
-		   if( ( $currentOffset + $this->perPage ) < ( $this->totalRows -1 ) )
-			  $info .= $currentOffset + $this->perPage;
-		   else
-			  $info .= $this->totalRows;
-		
-		   $info .= ' of ' . $this->totalRows . ' | ';
-		
-		   $output .= $info;
-		}
+			// if ($this->showCount){
+			//    $currentOffset = $this->currentPage;
+			//    $info = 'Showing ' . ( $currentOffset + 1 ) . ' to ' ;
+			
+			//    if( ( $currentOffset + $this->perPage ) < ( $this->totalRows -1 ) )
+			// 	  $info .= $currentOffset + $this->perPage;
+			//    else
+			// 	  $info .= $this->totalRows;
+			
+			//    $info .= ' of ' . $this->totalRows . ' | ';
+			
+			//    $output .= $info;
+			// }
 		
 		$this->numLinks = (int)$this->numLinks;
 		
@@ -111,11 +112,11 @@ class Pagination{
 		$end   = (($this->currentPage + $this->numLinks) < $numPages) ? $this->currentPage + $this->numLinks : $numPages;
 
 		// Render the "First" link
-		if  ($this->currentPage > $this->numLinks){
-			$output .= $this->firstTagOpen 
-				. $this->getAJAXlink( '' , $this->firstLink)
-				. $this->firstTagClose; 
-		}
+				// if  ($this->currentPage > $this->numLinks){
+				// 	$output .= $this->firstTagOpen 
+				// 		. $this->getAJAXlink( '' , $this->firstLink)
+				// 		. $this->firstTagClose; 
+				// }
 
 		// Render the "previous" link
 		if  ($this->currentPage != 1){
@@ -178,7 +179,7 @@ class Pagination{
 		}
 		
 	    return "<a href=\"javascript:void(0);\" " . $this->anchorClass . "
-				". $linkClick .">". $text .'</a>';
+				". $linkClick ." style='padding:10px;'>". $text .'</a>';
 	}
 }
 ?>

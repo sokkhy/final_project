@@ -12,10 +12,10 @@ if(isset($_POST['page'])){
     //set conditions for search
     $whereSQL = $orderSQL = '';
     $keywords = $_POST['keywords'];
-    // $sortBy = $_POST['sortBy'];
-    // if(!empty($keywords)){
-    //     $whereSQL = "WHERE shirtName LIKE '%".$keywords."%'";
-    // }
+    $sortBy = $_POST['sortBy'];
+    if(!empty($keywords)){
+     $whereSQL = "WHERE shirtName LIKE '%".$keywords."%'";
+    }
     // if(!empty($sortBy)){
     //     $orderSQL = " ORDER BY id ".$sortBy;
     // }else{
@@ -84,7 +84,7 @@ $output.="<script>".
              "</script>";
 }
 ?>
-<?php echo $pagination->createLinks(); ?>
+
 <?php
 $output.="</div>";
 $output.="</div>";
@@ -92,3 +92,4 @@ print($output);
  } 
 }
   ?>
+  <?php echo $pagination->createLinks(); ?>
