@@ -34,7 +34,7 @@ $cart = new Cart;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-    .container{padding: 50px;}
+    .containers{padding: 50px;}
     input[type="number"]{width: 20%;}
     </style>
     <script>
@@ -52,7 +52,7 @@ $cart = new Cart;
 </head>
 <body>
     <?php include 'header.php';?>
-<div class="container">
+<div class="containers">
     <h1>Your Items</h1>
     <table class="table">
     <thead>
