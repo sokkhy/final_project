@@ -1,6 +1,9 @@
 <?php
-// include database configuration file
-include 'dbConfig.php';
+   //Include pagination class file
+include('Pagination.php');   
+    //Include database configuration file
+include('dbcon.php');
+//Include number of product count
 include 'productCount.php';
 ?> 
 <!DOCTYPE html>
@@ -98,13 +101,9 @@ function searchFilter(page_num) {
 				</div>					
     <div id="posts_content">
     <?php
-    //Include pagination class file
-    include('Pagination.php');
+ 
     
-    //Include database configuration file
-    include('dbcon.php');
-    
-    $limit = 12;
+    $limit = 6;
     
     //get number of rows
     $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");
@@ -156,7 +155,7 @@ $output.="<script>".
                        var nameDetail =  $('#shi_name".$i."').text(); 
                        var imgDetail = $('.shi_img".$i."').attr('src');   
                        var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank'; 
                     
                      }); 
 
@@ -172,6 +171,7 @@ $output.="</div>";
 $output.="</div>";
 print($output);
  }
+
 ?>
 <?php echo $pagination->createLinks(); ?>
 

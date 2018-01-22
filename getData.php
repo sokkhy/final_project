@@ -7,7 +7,7 @@ if(isset($_POST['page'])){
     include('dbCon.php');
     
     $start = !empty($_POST['page'])?$_POST['page']:0;
-    $limit = 12;
+    $limit = 6;
     
     //set conditions for search
     $whereSQL = $orderSQL = '';
@@ -90,6 +90,9 @@ $output.="</div>";
 $output.="</div>";
 print($output);
  } 
+ else{
+    echo "<h1>Not found!</h1>";
+ }
 }
   ?>
   <?php echo $pagination->createLinks(); ?>

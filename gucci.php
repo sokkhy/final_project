@@ -115,28 +115,18 @@ $output.="<script>".
                        var id = $('#sid".$i."').text();
                        window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
                     
-                     }); 
-
-                       
-                    })".
-
+               }); 
+		})".
              "</script>";
-
-
 $output.="<script>".
     "$(document).ready(function(){
     	var i = 0;
         $('.addToCart').click(function(){
         	i++;
-       
-         
-    		
-         })
+       })
+ })
 
-           
-        })
-
- </script>";
+</script>";
    	 }
 	} else {
     echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";

@@ -4,18 +4,12 @@ session_start();
 	 $user = "root";
 	 $password = "";
 	 $database = "dbkeybest";
-
   $conn = new mysqli($host, $user, $password, $database);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
-
-
-?> 
-
-
-
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,35 +139,31 @@ $i++;
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
 		  "</tr>";
-		  
+
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_id".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'adidas';
 
-                            
-                             }); 
 
-                       
+                             });
+
+
                     })".
              "</script>";
           $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text(); 
-                               var codeUpdate =  $('#shi_code".$i."').text(); 
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&CU='+codeUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var codeUpdate =  $('#shi_code".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&CU='+codeUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'adidas';
+ 													 });
                     })".
           "</script>";
    		}
@@ -182,10 +172,7 @@ $i++;
 }
 $output.="</table>";
  print($output);
-
-
 ?>
-
 </div>
 <div id="nike" class="tabcontent">
 <?php
@@ -215,45 +202,37 @@ $i++;
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
 		  "</tr>";
-		  
+
     $output.="<script>".
                 "$(document).ready(function(){
                     $('.btn_delete".$i."').click(function(){
-                       var _id = $('#shi_id".$i."').text();                          
+                       var _id = $('#shi_id".$i."').text();
 				window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'nike';
 
-             }); 
+             });
                   })".
            "</script>";
    $output.="<script>".
 
 				"$(document).ready(function(){
             $('.btn_update".$i."').click(function(){
-               var idUpdate = $('#shi_id".$i."').text();  
-               var priceUpdate = $('#shi_price".$i."').text();  
-               var sizeUpdate =  $('#shi_size".$i."').text();   
-               var nameUpdate =  $('#shi_name".$i."').text(); 
-               var imgUpate = $('.shi_img".$i."').attr('src');    
-               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&brand='+'nike';                       
-	
-           
-                   }); 
-
-             
-	            })".
+               var idUpdate = $('#shi_id".$i."').text();
+               var priceUpdate = $('#shi_price".$i."').text();
+               var sizeUpdate =  $('#shi_size".$i."').text();
+               var nameUpdate =  $('#shi_name".$i."').text();
+               var imgUpate = $('.shi_img".$i."').attr('src');
+               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&brand='+'nike';
+ 					 		});
+						})".
 	  "</script>";
 	}
-    
-	} else {
+} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
-
 <div id="gucci" class="tabcontent">
 <?php
 	$output ="";
@@ -288,35 +267,28 @@ $i++;
                                var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'gucci';
-                             }); 
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'gucci';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'gucci';
+                             });
                     })".
           "</script>";
    		}
-    
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
 <div id="prada" class="tabcontent">
@@ -353,38 +325,32 @@ $i++;
                                var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'prada';
-                             }); 
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'prada';                       
-							
-                     
-                             }); 
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'prada';
 
-                       
+                             });
                     })".
           "</script>";
    		}
-   
+
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
-
 <div id="supreme" class="tabcontent">
 <?php
 	$output ="";
@@ -419,35 +385,29 @@ $i++;
                                var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'supreme';
-                             }); 
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'supreme';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'supreme';
+                             });
                     })".
           "</script>";
    		}
-   
+
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
 
@@ -482,38 +442,33 @@ $i++;
 	$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_id".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'tommy_hilfiger';
-                            
-                             }); 
+                               var _id = $('#shi_id".$i."').text();
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'tommyhilfiger';
+
+                             });
                     })".
              "</script>";
     $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'tommy_hilfiger';                       
-							
-                     
-                             }); 
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'tommyhilfiger';
+                             });
 
-                       
                     })".
           "</script>";
    		}
-    
+
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
 <div id="versace" class="tabcontent">
@@ -550,28 +505,28 @@ $i++;
                                var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'versace';
-                             }); 
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'versace';                       
-							
-                     
-                             }); 
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'versace';
 
-                       
+
+                             });
+
+
                     })".
           "</script>";
    		}
-    
+
 	} else {
     echo "No Data";
 }
@@ -610,42 +565,35 @@ $i++;
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
 		  "</tr>";
-		  
+
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_id".$i."').text();                          
+                               var _id = $('#shi_id".$i."').text();
 								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'diesel';
-                            
-                             }); 
+
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'diesel';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'diesel';
+                             });
                     })".
           "</script>";
    		}
-    
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
 
@@ -677,35 +625,31 @@ $i++;
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
 		  "</tr>";
-		  
+
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_id".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'hugo_boss';
-                            
-                             }); 
+                               var _id = $('#shi_id".$i."').text();
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'hugoboss';
+
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'hugo_boss';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'hugoboss';
+                             });
                     })".
           "</script>";
    		}
-    
+
 	} else {
     echo "No Data";
 }
@@ -743,45 +687,37 @@ $i++;
 				"<td style='width:'colspan='2'><button type='button' class='btn btn-danger btn_delete".$i."'>Delete</button></td>".
 				"<td><button type='button' class='btn btn-warning btn_update".$i."'>Update</button></td>".
 		  "</tr>";
-		  
+
  		$output.="<script>".
                         "$(document).ready(function(){
                             $('.btn_delete".$i."').click(function(){
-                               var _id = $('#shi_id".$i."').text();                          
-								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'under_armour';
-                            
-                             }); 
+                               var _id = $('#shi_id".$i."').text();
+								window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'underarmour';
+
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'under_armour';                       
-							
-                     
-                             }); 
-
-                       
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'underarmour';
+                             });
                     })".
           "</script>";
    		}
-    
 	} else {
     echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
-
 <div id="puma" class="tabcontent">
 <?php
 	$output ="";
@@ -816,38 +752,30 @@ $i++;
                                var _id = $('#shi_id".$i."').text();
                                var _brand =$('.tablinks').val();
 							window.location.href = 'http://localhost:81/4Shop/delete.php?src='+_id+'&brand='+'puma';
-                             }); 
+                             });
                     })".
              "</script>";
         $output.="<script>".
 
  						"$(document).ready(function(){
                             $('.btn_update".$i."').click(function(){
-                               var idUpdate = $('#shi_id".$i."').text();  
-                               var priceUpdate = $('#shi_price".$i."').text();  
-                               var sizeUpdate =  $('#shi_size".$i."').text();   
-                               var nameUpdate =  $('#shi_name".$i."').text(); 
-                               var imgUpate = $('.shi_img".$i."').attr('src');    
-                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'puma';                       
-							
-                     
-                             }); 
-
-                       
-                    })".
-          "</script>";
-   		}
-    
-	} else {
-    echo "No Data";
+                               var idUpdate = $('#shi_id".$i."').text();
+                               var priceUpdate = $('#shi_price".$i."').text();
+                               var sizeUpdate =  $('#shi_size".$i."').text();
+                               var nameUpdate =  $('#shi_name".$i."').text();
+                               var imgUpate = $('.shi_img".$i."').attr('src');
+                               window.location.href = 'http://localhost:81/4Shop/update.php?idU='+idUpdate+'&SU='+sizeUpdate+'&NU='+nameUpdate+'&IU='+imgUpate+'&PU='+priceUpdate+'&brand='+'puma';
+   });
+})".
+  "</script>";
+   	}
+} else {
+  echo "No Data";
 }
 $output.="</table>";
  print($output);
-
-
 ?>
 </div>
-
 <script>
 function eachbrand(evt, brancname) {
     var i, tabcontent, tablinks;
@@ -863,6 +791,6 @@ function eachbrand(evt, brancname) {
     document.getElementById(brancname).style.display = "block";
     evt.currentTarget.className += " active";
 }
-</script>    
+</script>
 </body>
-</html> 
+</html>

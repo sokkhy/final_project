@@ -66,7 +66,7 @@ class Pagination{
 		// Is there only one page? will not need to continue
 		if ($numPages == 1){
 			if ($this->showCount){
-				$info = 'Result : ' . $this->totalRows;
+				$info = 'Shirt Found : ' . $this->totalRows;
 				return $info;
 			}else{
 				return '';

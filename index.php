@@ -39,7 +39,25 @@ include 'productCount.php';
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	
+	<script>
+function searchFilter(page_num) {
+    page_num = page_num?page_num:0;
+    var keywords = $('#keywords').val();
+    var sortBy = $('#sortBy').val();
+    $.ajax({
+        type: 'POST',
+        url: 'getData.php',
+        data:'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
+        beforeSend: function () {
+            $('.loading-overlay').show();
+        },
+        success: function (html) {
+            $('#posts_content').html(html);
+            $('.loading-overlay').fadeOut("slow");
+        }
+    });
+}
+</script>
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -173,36 +191,25 @@ $i++;
 $output.="</div>";
 $output.="</div>"; 		
 $output.="<script>".
-                "$(document).ready(function(){
-                    $('.shi_img".$i."').click(function(){
-                       var codeDetail =  $('#shi_code".$i."').text(); 
-                       var priceDetail = $('#shi_price".$i."').text();  
-                       var sizeDetail=  $('#shi_size".$i."').text();   
-                       var nameDetail =  $('#shi_name".$i."').text(); 
-                       var imgDetail = $('.shi_img".$i."').attr('src');   
-                       var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
-                    
-                     }); 
-
-                       
-                    })".
-
-             "</script>";
-
-
+            "$(document).ready(function(){
+                $('.shi_img".$i."').click(function(){
+                   var codeDetail =  $('#shi_code".$i."').text(); 
+                   var priceDetail = $('#shi_price".$i."').text();  
+                   var sizeDetail=  $('#shi_size".$i."').text();   
+                   var nameDetail =  $('#shi_name".$i."').text(); 
+                   var imgDetail = $('.shi_img".$i."').attr('src');   
+                   var id = $('#sid".$i."').text();
+                   window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
+			  });  
+			})".
+"</script>";
 $output.="<script>".
     "$(document).ready(function(){
     	var i = 0;
         $('.addToCart').click(function(){
         	i++;
-       
-         
-    		
          })
-
-           
-        })
+})
 
  </script>";
    	 }

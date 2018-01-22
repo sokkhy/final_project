@@ -1,5 +1,7 @@
 <?php
 // initialize shopping cart class
+ob_start();
+// session_start();
 include 'Cart.php';
 $cart = new Cart;
 
@@ -9,11 +11,11 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['id']) &&  !empty($_REQUEST['brand'])){
         $productID = $_REQUEST['id'];
         $shritbrand = $_GET['brand'];
-        $brand = explode ("_", $shritbrand);
-         $a = $brand[0];
-         echo $a;
+        $a = explode ("_", $shritbrand);
+         $brand = $a[0];
+         echo $brand;
         // get product details
-        $query = $db->query('SELECT * FROM '.$a.'  WHERE id =' .$productID);
+        $query = $db->query('SELECT * FROM '.$brand.'  WHERE id =' .$productID);
         
         $row = $query->fetch_assoc();
 
@@ -27,18 +29,21 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
      
         $insertItem = $cart->insert($itemData);
         $redirectLoc = $insertItem?'viewCart.php':'index.php';
-        header("Location: ".$redirectLoc);
-    }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
+        header("Location:".$redirectLoc);
+    }
+    elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
         $itemData = array(
             'rowid' => $_REQUEST['id'],
             'qty' => $_REQUEST['qty']
         );
         $updateItem = $cart->update($itemData);
         echo $updateItem?'ok':'err';die;
-    }elseif($_REQUEST['action'] == 'removeCartItem' && !empty($_REQUEST['id'])){
+    }
+    elseif($_REQUEST['action'] == 'removeCartItem' && !empty($_REQUEST['id'])){
         $deleteItem = $cart->remove($_REQUEST['id']);
-        header("Location: viewCart.php");
-    }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
+        header("Location:viewCart.php");
+    }
+    elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
         // insert order details into database
         $insertOrder = $db->query("INSERT INTO orders (customer_id, total_price, created, modified) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
         
