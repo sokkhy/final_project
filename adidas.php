@@ -1,11 +1,11 @@
 <?php
    //Include pagination class file
-include('Pagination.php');   
+include('Pagination.php');
     //Include database configuration file
 include('dbcon.php');
 //Include number of product count
 include 'productCount.php';
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +27,7 @@ include 'productCount.php';
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -46,11 +46,11 @@ include 'productCount.php';
 function searchFilter(page_num) {
     page_num = page_num?page_num:0;
     var keywords = $('#keywords').val();
-    var sortBy = $('#sortBy').val();
+    // var sortBy = $('#sortBy').val();
     $.ajax({
         type: 'POST',
         url: 'getData.php',
-        data:'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
+        data:'page='+page_num+'&keywords='+keywords,
         beforeSend: function () {
             $('.loading-overlay').show();
         },
@@ -64,12 +64,12 @@ function searchFilter(page_num) {
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">		
+				<div class="col-sm-12">
 				</div>
 			</div>
 		</div>
 	</section><!--/slider-->
-	
+
 	<section>
 		<div class="container">
 			<div class="row">
@@ -96,20 +96,20 @@ function searchFilter(page_num) {
 						<!-- <div class="shipping text-center">
 							<img src="images/home/shipping.jpg" alt="" />
 						</div> -->
-					
+
 					</div>
-				</div>					
+				</div>
     <div id="posts_content">
     <?php
- 
-    
+
+
     $limit = 6;
-    
+
     //get number of rows
     $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas");
     $resultNum = $queryNum->fetch_assoc();
     $rowCount = $resultNum['postNum'];
-    
+
     //initialize pagination class
     $pagConfig = array(
         'totalRows' => $rowCount,
@@ -117,16 +117,16 @@ function searchFilter(page_num) {
         'link_func' => 'searchFilter'
     );
     $pagination =  new Pagination($pagConfig);
-    
+
     //get rows
     $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
    $output ="";
 $i = 0;
- if($query->num_rows > 0){ 
+ if($query->num_rows > 0){
 $output.="<div class='col-sm-9 padding-right'>
                     <div class='features_items'>
                         <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
-while($row = $query->fetch_assoc()){ 
+while($row = $query->fetch_assoc()){
                 $postID = $row['id'];
 
 $i++;
@@ -141,25 +141,25 @@ $i++;
                 "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
                 "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
                 "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-          
 
- $output.="</div></div>"; 
+
+ $output.="</div></div>";
 $output.="</div>";
-$output.="</div>";      
+$output.="</div>";
 $output.="<script>".
                 "$(document).ready(function(){
                     $('.shi_img".$i."').click(function(){
-                       var codeDetail =  $('#shi_code".$i."').text(); 
-                       var priceDetail = $('#shi_price".$i."').text();  
-                       var sizeDetail=  $('#shi_size".$i."').text();   
-                       var nameDetail =  $('#shi_name".$i."').text(); 
-                       var imgDetail = $('.shi_img".$i."').attr('src');   
+                       var codeDetail =  $('#shi_code".$i."').text();
+                       var priceDetail = $('#shi_price".$i."').text();
+                       var sizeDetail=  $('#shi_size".$i."').text();
+                       var nameDetail =  $('#shi_name".$i."').text();
+                       var imgDetail = $('.shi_img".$i."').attr('src');
                        var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank'; 
-                    
-                     }); 
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank';
 
-                       
+                     });
+
+
                     })".
 
              "</script>";
@@ -177,9 +177,9 @@ print($output);
 
 </div>
 		</div>
-	
+
 	</section>
-<?php include 'footer.php';?>	
+<?php include 'footer.php';?>
 <!--/Footer-->
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>

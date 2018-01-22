@@ -2,17 +2,17 @@
 if(isset($_POST['page'])){
     //Include pagination class file
     include('Pagination.php');
-    
+
     //Include database configuration file
     include('dbCon.php');
-    
+
     $start = !empty($_POST['page'])?$_POST['page']:0;
     $limit = 6;
-    
+
     //set conditions for search
     $whereSQL = $orderSQL = '';
     $keywords = $_POST['keywords'];
-    $sortBy = $_POST['sortBy'];
+    // $sortBy = $_POST['sortBy'];
     if(!empty($keywords)){
      $whereSQL = "WHERE shirtName LIKE '%".$keywords."%'";
     }
@@ -35,17 +35,17 @@ if(isset($_POST['page'])){
         'link_func' => 'searchFilter'
     );
     $pagination =  new Pagination($pagConfig);
-    
+
     //get rows
     $query = $db->query("SELECT * FROM adidas $whereSQL $orderSQL LIMIT $start,$limit");
-    
+
 $output ="";
 $i = 0;
- if($query->num_rows > 0){ 
+ if($query->num_rows > 0){
 $output.="<div class='col-sm-9 padding-right'>
                     <div class='features_items'>
                         <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
-while($row = $query->fetch_assoc()){ 
+while($row = $query->fetch_assoc()){
                 $postID = $row['id'];
 
 $i++;
@@ -60,25 +60,25 @@ $i++;
                 "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
                 "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
                 "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-          
 
- $output.="</div></div>"; 
+
+ $output.="</div></div>";
 $output.="</div>";
-$output.="</div>";      
+$output.="</div>";
 $output.="<script>".
                 "$(document).ready(function(){
                     $('.shi_img".$i."').click(function(){
-                       var codeDetail =  $('#shi_code".$i."').text(); 
-                       var priceDetail = $('#shi_price".$i."').text();  
-                       var sizeDetail=  $('#shi_size".$i."').text();   
-                       var nameDetail =  $('#shi_name".$i."').text(); 
-                       var imgDetail = $('.shi_img".$i."').attr('src');   
+                       var codeDetail =  $('#shi_code".$i."').text();
+                       var priceDetail = $('#shi_price".$i."').text();
+                       var sizeDetail=  $('#shi_size".$i."').text();
+                       var nameDetail =  $('#shi_name".$i."').text();
+                       var imgDetail = $('.shi_img".$i."').attr('src');
                        var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
-                    
-                     }); 
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail;
 
-                       
+                     });
+
+
                     })".
 
              "</script>";
@@ -89,7 +89,7 @@ $output.="<script>".
 $output.="</div>";
 $output.="</div>";
 print($output);
- } 
+ }
  else{
     echo "<h1>Not found!</h1>";
  }

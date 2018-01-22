@@ -16,7 +16,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
          echo $brand;
         // get product details
         $query = $db->query('SELECT * FROM '.$brand.'  WHERE id =' .$productID);
-        
+
         $row = $query->fetch_assoc();
 
         $itemData = array(
@@ -26,7 +26,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             'img' => $row['image'],
             'qty' => 1
         );
-     
+
         $insertItem = $cart->insert($itemData);
         $redirectLoc = $insertItem?'viewCart.php':'index.php';
         header("Location:".$redirectLoc);
@@ -46,7 +46,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
         // insert order details into database
         $insertOrder = $db->query("INSERT INTO orders (customer_id, total_price, created, modified) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
-        
+
         if($insertOrder){
             $orderID = $db->insert_id;
             $sql = '';
@@ -57,7 +57,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             }
             // insert order items into database
             $insertOrderItems = $db->multi_query($sql);
-            
+
             if($insertOrderItems){
                 $cart->destroy();
                 header("Location: orderSuccess.php?id=$orderID");
