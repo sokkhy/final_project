@@ -10,7 +10,8 @@ if(isset($_POST['page'])){
     $limit = 6;
 
     //set conditions for search
-    $whereSQL = $orderSQL = '';
+    $whereSQL = '';
+    // $orderSQL ='';
     $keywords = $_POST['keywords'];
     // $sortBy = $_POST['sortBy'];
     if(!empty($keywords)){
@@ -23,7 +24,8 @@ if(isset($_POST['page'])){
     // }
 
     //get number of rows
-    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas ".$whereSQL.$orderSQL);
+    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM adidas ".$whereSQL);
+    //add (.$orderSQ) after .$whereSQL for sorting
     $resultNum = $queryNum->fetch_assoc();
     $rowCount = $resultNum['postNum'];
 
@@ -37,8 +39,8 @@ if(isset($_POST['page'])){
     $pagination =  new Pagination($pagConfig);
 
     //get rows
-    $query = $db->query("SELECT * FROM adidas $whereSQL $orderSQL LIMIT $start,$limit");
-
+    $query = $db->query("SELECT * FROM adidas $whereSQL LIMIT $start,$limit");
+ //add ($orderSQL) after $whereSQL for sorting
 $output ="";
 $i = 0;
  if($query->num_rows > 0){

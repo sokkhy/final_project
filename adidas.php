@@ -51,6 +51,7 @@ function searchFilter(page_num) {
         type: 'POST',
         url: 'getData.php',
         data:'page='+page_num+'&keywords='+keywords,
+        //+'&sortBy='+sortBy,
         beforeSend: function () {
             $('.loading-overlay').show();
         },
