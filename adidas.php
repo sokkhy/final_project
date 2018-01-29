@@ -49,7 +49,7 @@ function searchFilter(page_num) {
     // var sortBy = $('#sortBy').val();
     $.ajax({
         type: 'POST',
-        url: 'getData.php',
+        url: 'adidas_getData.php',
         data:'page='+page_num+'&keywords='+keywords,
         //+'&sortBy='+sortBy,
         beforeSend: function () {

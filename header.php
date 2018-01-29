@@ -24,47 +24,13 @@
 				</div>
 			</div>
 		</div><!--/header_top-->
-		
-		  <!-- <div class="header-middle">
-			<div class="container">
-				<div class="row"> -->
-					<!-- <div class="col-md-4 clearfix">
-						<div class="logo pull-left">
-							<a href="index-2.html"><img src="images/home/logo.png" alt="" /></a>
-						</div>
-						<div class="btn-group pull-right clearfix">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="javascript:">Cambodia</a></li>
-									<li><a href="javascript:">US</a></li>
-									<li><a href="javascript:">China</a></li>
-								</ul>
-							</div>
-							
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="javascript:">Riel</a></li>
-									<li><a href="javascript:">Dollar</a></li>
-									<li><a href="javascript:">Yen</a></li>
-								</ul>
-							</div>
-						</div>
-					</div -->
 				<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							  <ul role="menu" class="sub-menu">
-							  		<li><a href="index.php" class="active">Home</a></li> 
-	                                <li><a href="shop.php">Products</a></li> 
-									<li><a href="ViewCart.php">Cart</a></li> 
-									<li><a href="login.php">Login</a></li> 
+							  		<li><a href="index.php" class="active">Home</a></li>
+	                                <li><a href="shop.php">Products</a></li>
+									<li><a href="ViewCart.php">Cart</a></li>
+									<li><a href="login.php">Login</a></li>
 	                            </ul>
 						</div>
 					</div>
@@ -72,7 +38,7 @@
 	<!-- 		</div>
 		</div>  -->
 		<!--/header-middle-->
-	
+
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
@@ -80,11 +46,11 @@
 
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li> 
+								<li><a href="index.php" class="active">Home</a></li>
                                 <li><a href="shop.php">Products</a></li>
-								<li><a href="checkout.php">Checkout</a></li> 
-								<li><a href="viewCart.php">Cart</a></li> 
-								<li><a href="login.php">Login</a></li> 
+								<li><a href="checkout.php">Checkout</a></li>
+								<li><a href="viewCart.php">Cart</a></li>
+								<li><a href="login.php">Login</a></li>
 								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
@@ -116,7 +82,7 @@
 <script>
 $(document).ready(function(){
   $("#cart").click(function(){
-      window.location.href = "http://localhost:81/4Shop/viewCart.php"; 
+      window.location.href = "http://localhost:81/4Shop/viewCart.php";
   })
 });
 </script>

@@ -1,8 +1,11 @@
 <?php
-// include database configuration file
-include 'dbConfig.php';
+   //Include pagination class file
+include('Pagination.php');
+    //Include database configuration file
+include('dbcon.php');
+//Include number of product count
 include 'productCount.php';
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +27,7 @@ include 'productCount.php';
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -39,16 +42,35 @@ include 'productCount.php';
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	
+	<script>
+function searchFilter(page_num) {
+    page_num = page_num?page_num:0;
+    var keywords = $('#keywords').val();
+    // var sortBy = $('#sortBy').val();
+    $.ajax({
+        type: 'POST',
+        url: 'gucci_getData.php',
+        data:'page='+page_num+'&keywords='+keywords,
+        //+'&sortBy='+sortBy,
+        beforeSend: function () {
+            $('.loading-overlay').show();
+        },
+        success: function (html) {
+            $('#posts_content').html(html);
+            $('.loading-overlay').fadeOut("slow");
+        }
+    });
+}
+</script>
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">		
+				<div class="col-sm-12">
 				</div>
 			</div>
 		</div>
 	</section><!--/slider-->
-	
+
 	<section>
 		<div class="container">
 			<div class="row">
@@ -75,75 +97,90 @@ include 'productCount.php';
 						<!-- <div class="shipping text-center">
 							<img src="images/home/shipping.jpg" alt="" />
 						</div> -->
-					
-					</div>
-				</div>					
-<?php
-$output ="";
-$i = 0;
-$result =$db->query ("SELECT * FROM gucci LIMIT 12");
-if ($result->num_rows > 0) {
-  $output.="<div class='col-sm-9 padding-right'>
-					<div class='features_items'>
-						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
- while($row = $result->fetch_assoc()) {
-$i++;
-	$output.="<div class='col-sm-4'>".
-			"<div class='product-image-wrapper'>".
-			"<div class='single-products'>";
-		$output.= "<div class='productinfo text-center'>".
-				"Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
-				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
-				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
-				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
-				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
-				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-		  
 
- $output.="</div></div>"; 
+					</div>
+				</div>
+    <div id="posts_content">
+    <?php
+
+
+    $limit = 6;
+
+    //get number of rows
+    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM gucci");
+    $resultNum = $queryNum->fetch_assoc();
+    $rowCount = $resultNum['postNum'];
+
+    //initialize pagination class
+    $pagConfig = array(
+        'totalRows' => $rowCount,
+        'perPage' => $limit,
+        'link_func' => 'searchFilter'
+    );
+    $pagination =  new Pagination($pagConfig);
+
+    //get rows
+    $query = $db->query("SELECT * FROM gucci ORDER BY id DESC LIMIT $limit");
+   $output ="";
+$i = 0;
+ if($query->num_rows > 0){
+$output.="<div class='col-sm-9 padding-right'>
+                    <div class='features_items'>
+                        <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
+while($row = $query->fetch_assoc()){
+                $postID = $row['id'];
+
+$i++;
+    $output.="<div class='col-sm-4'>".
+            "<div class='product-image-wrapper'>".
+            "<div class='single-products'>";
+        $output.= "<div class='productinfo text-center'>".
+                "Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
+                "<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
+                "<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+                "<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
+                "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+                "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
+                "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+
+
+ $output.="</div></div>";
 $output.="</div>";
-$output.="</div>"; 		
+$output.="</div>";
 $output.="<script>".
                 "$(document).ready(function(){
                     $('.shi_img".$i."').click(function(){
-                       var codeDetail =  $('#shi_code".$i."').text(); 
-                       var priceDetail = $('#shi_price".$i."').text();  
-                       var sizeDetail=  $('#shi_size".$i."').text();   
-                       var nameDetail =  $('#shi_name".$i."').text(); 
-                       var imgDetail = $('.shi_img".$i."').attr('src');   
+                       var codeDetail =  $('#shi_code".$i."').text();
+                       var priceDetail = $('#shi_price".$i."').text();
+                       var sizeDetail=  $('#shi_size".$i."').text();
+                       var nameDetail =  $('#shi_name".$i."').text();
+                       var imgDetail = $('.shi_img".$i."').attr('src');
                        var id = $('#sid".$i."').text();
-                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
-                    
-               }); 
-		})".
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank';
+
+                     });
+
+
+                    })".
+
              "</script>";
-$output.="<script>".
-    "$(document).ready(function(){
-    	var i = 0;
-        $('.addToCart').click(function(){
-        	i++;
-       })
- })
-
-</script>";
-   	 }
-	} else {
-    echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
 }
+?>
 
+<?php
 $output.="</div>";
 $output.="</div>";
- print($output);
-
+print($output);
+ }
 
 ?>
+<?php echo $pagination->createLinks(); ?>
+
 </div>
-				</div>
-			</div>
 		</div>
+
 	</section>
-<?php include 'footer.php';?>	
+<?php include 'footer.php';?>
 <!--/Footer-->
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
