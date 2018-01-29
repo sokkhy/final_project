@@ -24,8 +24,8 @@ if(isset($_POST['page'])){
     // }
 
     //get number of rows
-    $queryNum = $db->query("SELECT COUNT(*) as postNum FROM gucci ".$whereSQL);
-    //add (.$orderSQ) after .$whereSQL for sorting
+    $queryNum = $db->query("(SELECT COUNT(shirtName) as postNum FROM adidas $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM diesel $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM gucci $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM hugoboss $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM nike $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM prada $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM puma $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM supreme $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM tommyhilfiger $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM underarmour $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM versace $whereSQL)");
+    //add (.$orderSQ) after .$whereSQL for sortin
     $resultNum = $queryNum->fetch_assoc();
     $rowCount = $resultNum['postNum'];
 
@@ -39,7 +39,7 @@ if(isset($_POST['page'])){
     $pagination =  new Pagination($pagConfig);
 
     //get rows
-    $query = $db->query("SELECT * FROM gucci $whereSQL LIMIT $start,$limit");
+    $query = $db->query("(SELECT * FROM adidas $whereSQL) UNION (SELECT * FROM diesel $whereSQL) UNION (SELECT * FROM nike $whereSQL) UNION (SELECT * FROM gucci $whereSQL) UNION (SELECT * FROM hugoboss $whereSQL) UNION (SELECT * FROM prada $whereSQL) UNION (SELECT * FROM puma $whereSQL) UNION (SELECT * FROM supreme $whereSQL) UNION (SELECT * FROM tommyhilfiger $whereSQL) UNION (SELECT * FROM underarmour $whereSQL) UNION (SELECT * FROM versace $whereSQL) LIMIT $start,$limit");
  //add ($orderSQL) after $whereSQL for sorting
 $output ="";
 $i = 0;

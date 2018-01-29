@@ -2,7 +2,7 @@
 // include database configuration file
 include 'dbConfig.php';
 include 'productCount.php';
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +24,7 @@ include 'productCount.php';
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -39,7 +39,7 @@ include 'productCount.php';
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	<script>
+	<!-- <script>
 function searchFilter(page_num) {
     page_num = page_num?page_num:0;
     var keywords = $('#keywords').val();
@@ -57,7 +57,7 @@ function searchFilter(page_num) {
         }
     });
 }
-</script>
+</script> -->
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
@@ -68,7 +68,7 @@ function searchFilter(page_num) {
 							<li data-target="javascript:slider-carousel" data-slide-to="1"></li>
 							<li data-target="javascript:slider-carousel" data-slide-to="2"></li>
 						</ol>
-						
+
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
@@ -83,7 +83,7 @@ function searchFilter(page_num) {
 								</div>
 							</div>
 							<div class="item">
-								<div class="col-sm-6"> 
+								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
 									<h2>100% Responsive Design</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -94,7 +94,7 @@ function searchFilter(page_num) {
 									<img src="images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
-							
+
 							<div class="item">
 								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
@@ -107,9 +107,9 @@ function searchFilter(page_num) {
 									<img src="images/home/pricing.png" class="pricing" alt="" />
 								</div>
 							</div>
-							
+
 						</div>
-						
+
 						<a href="javascript:slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
@@ -117,17 +117,17 @@ function searchFilter(page_num) {
 							<i class="fa fa-angle-right"></i>
 						</a>
 					</div> -->
-					
+
 				</div>
 			</div>
 		</div>
 	</section><!--/slider-->
-	
+
 	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3" style="margin-left: -23px;">
-					<div class="left-sidebar">			
+					<div class="left-sidebar">
 					<div class="brands_products"><!--brands_products-->
 						<h2>Brands</h2>
 						<div class="brands-name">
@@ -146,7 +146,7 @@ function searchFilter(page_num) {
 							</ul>
 						</div>
 					</div><!--/brands_products-->
-						
+
 						<!-- <div class="price-range">
 							<h2>Price Range</h2>
 							<div class="well text-center">
@@ -154,20 +154,20 @@ function searchFilter(page_num) {
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div> --><!--/price-range-->
-						
+
 						<div class="shipping text-center"><!--shipping-->
 							<img src="images/home/shipping.jpg" alt="" />
 						</div><!--/shipping-->
-					
+
 					</div>
 				</div>
-				
-				
-						
+
+
+
 <?php
 $output ="";
 $i = 0;
-$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugoboss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommyhilfiger limit 1) UNION (SELECT * FROM underarmour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 11");
+$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugoboss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommyhilfiger limit 1) UNION (SELECT * FROM underarmour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 12");
 if ($result->num_rows > 0) {
   $output.="<div class='col-sm-9 padding-right'>
 					<div class='features_items'>
@@ -185,22 +185,22 @@ $i++;
 				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
 				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
 				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-		  
 
- $output.="</div></div>"; 
+
+ $output.="</div></div>";
 $output.="</div>";
-$output.="</div>"; 		
+$output.="</div>";
 $output.="<script>".
             "$(document).ready(function(){
                 $('.shi_img".$i."').click(function(){
-                   var codeDetail =  $('#shi_code".$i."').text(); 
-                   var priceDetail = $('#shi_price".$i."').text();  
-                   var sizeDetail=  $('#shi_size".$i."').text();   
-                   var nameDetail =  $('#shi_name".$i."').text(); 
-                   var imgDetail = $('.shi_img".$i."').attr('src');   
+                   var codeDetail =  $('#shi_code".$i."').text();
+                   var priceDetail = $('#shi_price".$i."').text();
+                   var sizeDetail=  $('#shi_size".$i."').text();
+                   var nameDetail =  $('#shi_name".$i."').text();
+                   var imgDetail = $('.shi_img".$i."').attr('src');
                    var id = $('#sid".$i."').text();
-                   window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail; 
-			  });  
+                   window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail;
+			  });
 			})".
 "</script>";
 $output.="<script>".
@@ -224,17 +224,17 @@ $output.="</div>";
 
 ?>
 </div>
-					
-					
+
+
 				</div>
 			</div>
 		</div>
 	</section>
-<?php include 'footer.php';?>	
+<?php include 'footer.php';?>
 <!--/Footer-->
-	
 
-  
+
+
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
