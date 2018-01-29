@@ -4,11 +4,11 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>4Shop</span></h2>							
+							<h2><span>4Shop</span></h2>
 							<p>Your Tshirt Partner</p>
 						</div>
 					</div>
-					<div class="col-sm-7">
+					<!-- <div class="col-sm-7">
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="javascript:">
@@ -23,7 +23,7 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-						
+
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="javascript:">
@@ -38,7 +38,7 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-						
+
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="javascript:">
@@ -53,7 +53,7 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-						
+
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
 								<a href="javascript:">
@@ -68,7 +68,7 @@
 								<h2>24 DEC 2014</h2>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-sm-3">
 						<div class="address">
 							<img src="images/home/map.png" alt="" />
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="footer-widget">
 			<div class="container">
 				<div class="row">
@@ -132,15 +132,15 @@
 							<form action="javascript:" class="searchform">
 								<input style="color:black;" type="text" placeholder="Your email address" /></br>
 								<input style="width:60px;background:#FE980F" type="submit" value="Send" class="btn btn-default" />
-								
+
 							</form>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="footer-bottom" style="background:#eb0606">
 			<div class="container">
 				<div class="row">
@@ -148,5 +148,5 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>

@@ -117,37 +117,35 @@ function searchFilter(page_num) {
         'perPage' => $limit,
         'link_func' => 'searchFilter'
     );
-    $pagination =  new Pagination($pagConfig);
+   $pagination =  new Pagination($pagConfig);
 
     //get rows
-    $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
+   $query = $db->query("SELECT * FROM adidas ORDER BY id DESC LIMIT $limit");
    $output ="";
-$i = 0;
- if($query->num_rows > 0){
-$output.="<div class='col-sm-9 padding-right'>
+   $i = 0;
+   if($query->num_rows > 0){
+   $output.="<div class='col-sm-9 padding-right'>
                     <div class='features_items'>
                         <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
-while($row = $query->fetch_assoc()){
-                $postID = $row['id'];
+    while($row = $query->fetch_assoc()){
+        $postID = $row['id'];
 
-$i++;
-    $output.="<div class='col-sm-4'>".
-            "<div class='product-image-wrapper'>".
-            "<div class='single-products'>";
+        $i++;
+        $output.="<div class='col-sm-4'>".
+          "<div class='product-image-wrapper'>".
+          "<div class='single-products'>";
         $output.= "<div class='productinfo text-center'>".
-                "Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
-                "<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
-                "<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
-                "<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
-                "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-                "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
-                "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
-
-
- $output.="</div></div>";
-$output.="</div>";
-$output.="</div>";
-$output.="<script>".
+          "Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
+          "<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
+          "<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+          "<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
+          "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+          "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
+          "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+        $output.="</div></div>";
+        $output.="</div>";
+        $output.="</div>";
+        $output.="<script>".
                 "$(document).ready(function(){
                     $('.shi_img".$i."').click(function(){
                        var codeDetail =  $('#shi_code".$i."').text();
@@ -159,12 +157,9 @@ $output.="<script>".
                        window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank';
 
                      });
-
-
-                    })".
-
-             "</script>";
-}
+                   })".
+              "</script>";
+ }
 ?>
 
 <?php

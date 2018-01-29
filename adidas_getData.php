@@ -26,6 +26,7 @@ if(isset($_POST['page'])){
     //get number of rows
     $queryNum = $db->query("(SELECT COUNT(shirtName) as postNum FROM adidas $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM diesel $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM gucci $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM hugoboss $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM nike $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM prada $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM puma $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM supreme $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM tommyhilfiger $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM underarmour $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM versace $whereSQL)");
     //add (.$orderSQ) after .$whereSQL for sortin
+    
     $resultNum = $queryNum->fetch_assoc();
     $rowCount = $resultNum['postNum'];
 

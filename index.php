@@ -1,6 +1,9 @@
 <?php
-// include database configuration file
-include 'dbConfig.php';
+   //Include pagination class file
+include('Pagination.php');
+    //Include database configuration file
+include('dbcon.php');
+//Include number of product count
 include 'productCount.php';
 ?>
 <!DOCTYPE html>
@@ -39,15 +42,16 @@ include 'productCount.php';
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	<!-- <script>
+	<script>
 function searchFilter(page_num) {
     page_num = page_num?page_num:0;
     var keywords = $('#keywords').val();
-    var sortBy = $('#sortBy').val();
+    // var sortBy = $('#sortBy').val();
     $.ajax({
         type: 'POST',
         url: 'getData.php',
-        data:'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
+        data:'page='+page_num+'&keywords='+keywords,
+        //+'&sortBy='+sortBy,
         beforeSend: function () {
             $('.loading-overlay').show();
         },
@@ -57,67 +61,11 @@ function searchFilter(page_num) {
         }
     });
 }
-</script> -->
+</script>
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<!-- <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="javascript:slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="javascript:slider-carousel" data-slide-to="1"></li>
-							<li data-target="javascript:slider-carousel" data-slide-to="2"></li>
-						</ol>
-
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-									<img src="images/home/pricing.png"  class="pricing" alt="" />
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="images/home/pricing.png"  class="pricing" alt="" />
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="images/home/pricing.png" class="pricing" alt="" />
-								</div>
-							</div>
-
-						</div>
-
-						<a href="javascript:slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-							<i class="fa fa-angle-left"></i>
-						</a>
-						<a href="javascript:slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-							<i class="fa fa-angle-right"></i>
-						</a>
-					</div> -->
-
 				</div>
 			</div>
 		</div>
@@ -128,119 +76,114 @@ function searchFilter(page_num) {
 			<div class="row">
 				<div class="col-sm-3" style="margin-left: -23px;">
 					<div class="left-sidebar">
-					<div class="brands_products"><!--brands_products-->
-						<h2>Brands</h2>
-						<div class="brands-name">
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="adidas.php" id="adidas"> <span class="pull-right">(<?php echo $row['adidas_total'] ?>)</span>Adidas</a></li>
-								<li><a href="diesel.php" id="diesel"> <span class="pull-right">(<?php echo $row2['diesel_total'] ?>)</span>Diesel</a></li>
-								<li><a href="gucci.php" id="gucci"> <span class="pull-right">(<?php echo $row10['gucci_total'] ?>)</span>Gucci</a></li>
-								<li><a href="hugo_boss.php" id="hugoboss"> <span class="pull-right">(<?php echo $row7['hugoboss_total'] ?>)</span>Hugo Boss</a></li>
-								<li><a href="nike.php" id="nike"> <span class="pull-right">(<?php echo $row1['nike_total'] ?>)</span>Nike</a></li>
-								<li><a href="prada.php" id="prada"> <span class="pull-right">(<?php echo $row4['prada_total'] ?>)</span>Prada</a></li>
-								<li><a href="puma.php" id="puma"> <span class="pull-right">(<?php echo $row3['puma_total'] ?>)</span>Puma</a></li>
-								<li><a href="supreme.php" id="supreme"> <span class="pull-right">(<?php echo $row9['supreme_total'] ?>)</span>Supreme</a></li>
-								<li><a href="tommy_hilfiger.php" id="tommyhilfiger"> <span class="pull-right">(<?php echo $row6['tommyhilfiger_total'] ?>)</span>Tommy Hilfiger</a></li>
-								<li><a href="under_armour.php" id="underarmour"> <span class="pull-right">(<?php echo $row8['underarmour_total'] ?>)</span>Under Armour</a></li>
-								<li><a href="versace.php" id="versace"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
-							</ul>
-						</div>
-					</div><!--/brands_products-->
-
-						<!-- <div class="price-range">
-							<h2>Price Range</h2>
-							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+								<li><a href="adidas.php"> <span class="pull-right">(<?php echo $row['adidas_total'] ?>)</span>Adidas</a></li>
+								<li><a href="diesel.php"> <span class="pull-right">(<?php echo $row2['diesel_total'] ?>)</span>Diesel</a></li>
+								<li><a href="gucci.php"> <span class="pull-right">(<?php echo $row10['gucci_total'] ?>)</span>Gucci</a></li>
+								<li><a href="hugo_boss.php"> <span class="pull-right">(<?php echo $row7['hugoboss_total'] ?>)</span>Hugo Boss</a></li>
+								<li><a href="nike.php"> <span class="pull-right">(<?php echo $row1['nike_total'] ?>)</span>Nike</a></li>
+								<li><a href="prada.php"> <span class="pull-right">(<?php echo $row4['prada_total'] ?>)</span>Prada</a></li>
+								<li><a href="puma.php"> <span class="pull-right">(<?php echo $row3['puma_total'] ?>)</span>Puma</a></li>
+								<li><a href="supreme.php"> <span class="pull-right">(<?php echo $row9['supreme_total'] ?>)</span>Supreme</a></li>
+								<li><a href="tommy_hilfiger.php"> <span class="pull-right">(<?php echo $row6['tommyhilfiger_total'] ?>)</span>Tommy Hilfiger</a></li>
+								<li><a href="under_armour.php"> <span class="pull-right">(<?php echo $row8['underarmour_total'] ?>)</span>Under Armour</a></li>
+								<li><a href="versace.php"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
+								</ul>
 							</div>
-						</div> --><!--/price-range-->
-
-						<div class="shipping text-center"><!--shipping-->
+						</div><!--/brands_products-->
+						<!-- <div class="shipping text-center">
 							<img src="images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
+						</div> -->
 
 					</div>
 				</div>
+    <div id="posts_content">
+    <?php
 
 
+    // $limit = 6;
 
-<?php
-$output ="";
-$i = 0;
-$result =$db->query ("(SELECT * FROM adidas limit 1) UNION (SELECT * FROM nike limit 1) UNION (SELECT * FROM diesel limit 1) UNION (SELECT * FROM gucci limit 1) UNION (SELECT * FROM prada limit 1) UNION (SELECT * FROM hugoboss limit 1) UNION (SELECT * FROM puma limit 1) UNION (SELECT * FROM supreme limit 1) UNION (SELECT * FROM tommyhilfiger limit 1) UNION (SELECT * FROM underarmour limit 1) UNION (SELECT * FROM versace limit 1) LIMIT 12");
-if ($result->num_rows > 0) {
-  $output.="<div class='col-sm-9 padding-right'>
-					<div class='features_items'>
-						<h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
- while($row = $result->fetch_assoc()) {
-$i++;
-	$output.="<div class='col-sm-4'>".
-			"<div class='product-image-wrapper'>".
-			"<div class='single-products'>";
-		$output.= "<div class='productinfo text-center'>".
-				"Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
-				"<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
-				"<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
-				"<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
-				"<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
-				"<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
-				"<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+    //get number of rows
+    // $queryNum = $db->query("(SELECT * FROM adidas LIMIT 1) UNION (SELECT * FROM diesel LIMIT 1) UNION * FROM gucci LIMIT 1) UNION (SELECT * FROM hugoboss LIMIT 1) UNION (SELECT * FROM nike LIMIT 1) UNION (SELECT * FROM prada LIMIT 1) UNION (SELECT * FROM puma LIMIT 1) UNION (SELECT * FROM supreme LIMIT 1) UNION (SELECT * FROM tommyhilfiger LIMIT 1) UNION (SELECT * as postNum FROM underarmour LIMIT 1) UNION (SELECT * FROM versace LIMIT 1) LIMIT 12");
+    // $resultNum = $queryNum->fetch_assoc();
+    // $rowCount = $resultNum['postNum'];
 
+    // $queryNum = $db->query("(SELECT * FROM adidas LIMIT 1) UNION (SELECT * FROM diesel LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM gucci LIMIT 1)  UNION (SELECT COUNT(shirtName) as postNum FROM hugoboss LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM nike LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM prada LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM puma LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM supreme LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM tommyhilfiger LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM underarmour LIMIT 1) UNION (SELECT COUNT(shirtName) as postNum FROM versace LIMIT 1) LIMIT 12");
+    // $resultNum = $queryNum->fetch_assoc();
+    // $rowCount = $resultNum['postNum'];
+    //initialize pagination class
+    // $pagConfig = array(
+    //     'totalRows' => $rowCount,
+    //     'perPage' => $limit,
+    //     'link_func' => 'searchFilter'
+    // );
+    // $pagination =  new Pagination($pagConfig);
 
- $output.="</div></div>";
-$output.="</div>";
-$output.="</div>";
-$output.="<script>".
-            "$(document).ready(function(){
-                $('.shi_img".$i."').click(function(){
-                   var codeDetail =  $('#shi_code".$i."').text();
-                   var priceDetail = $('#shi_price".$i."').text();
-                   var sizeDetail=  $('#shi_size".$i."').text();
-                   var nameDetail =  $('#shi_name".$i."').text();
-                   var imgDetail = $('.shi_img".$i."').attr('src');
-                   var id = $('#sid".$i."').text();
-                   window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail;
-			  });
-			})".
-"</script>";
-$output.="<script>".
-    "$(document).ready(function(){
-    	var i = 0;
-        $('.addToCart').click(function(){
-        	i++;
-         })
-})
+    //get rows
+    $query = $db->query("(SELECT * FROM adidas LIMIT 1) UNION (SELECT * FROM diesel LIMIT 1) UNION (SELECT * FROM nike LIMIT 1) UNION (SELECT * FROM gucci LIMIT 1) UNION (SELECT * FROM hugoboss LIMIT 1) UNION (SELECT * FROM prada LIMIT 1) UNION (SELECT * FROM puma LIMIT 1) UNION (SELECT * FROM supreme LIMIT 1) UNION (SELECT * FROM tommyhilfiger LIMIT 1) UNION (SELECT * FROM underarmour LIMIT 1) UNION (SELECT * FROM versace LIMIT 1) LIMIT 12");
+    $output ="";
+    $i = 0;
+ if($query->num_rows > 0){
+    $output.="<div class='col-sm-9 padding-right'>
+                    <div class='features_items'>
+                        <h2 class='title text-center' style='color:#f40d0d; font-size:2em;'>Best Selling T-shirt</h2>";
+    while($row = $query->fetch_assoc()){
+                $postID = $row['id'];
+    $i++;
+    $output.="<div class='col-sm-4'>".
+            "<div class='product-image-wrapper'>".
+            "<div class='single-products'>";
+    $output.= "<div class='productinfo text-center'>".
+                "Code: <span style='color:#0063ff; font-size:1.2em;font-family:serif' id='shi_code".$i."'>". $row["shirtCode"]."</span></br>".
+                "<span style='font-family:serif;color:#0063ff;' id='shi_name".$i."'>". $row["shirtName"]."</span></br>".
+                "<span style='color:#0063ff;' id='shi_size".$i."'>Size: ". $row["shirtSize"]."</span></br>".
+                "<img style='width:200px;height:200px;cursor: pointer;' class='shi_img".$i."' src='upload/".$row['image']."'/>".
+                "<h2 id='shi_price".$i."'>". $row["Price"]."</h2>".
+                "<h2 style='display: none;' id='sid".$i."'>". $row["id"]."</h2>".
+                "<a href='cartAction.php?action=addToCart&id=". $row["id"]."&brand=". $row["shirtCode"]."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>";
+    $output.="</div></div>";
+    $output.="</div>";
+    $output.="</div>";
+    $output.="<script>".
+                "$(document).ready(function(){
+                    $('.shi_img".$i."').click(function(){
+                       var codeDetail =  $('#shi_code".$i."').text();
+                       var priceDetail = $('#shi_price".$i."').text();
+                       var sizeDetail=  $('#shi_size".$i."').text();
+                       var nameDetail =  $('#shi_name".$i."').text();
+                       var imgDetail = $('.shi_img".$i."').attr('src');
+                       var id = $('#sid".$i."').text();
+                       window.location.href = 'http://localhost:81/4Shop/product-details.php?SID='+id+'&CD='+codeDetail+'&SD='+sizeDetail+'&ND='+nameDetail+'&ID='+imgDetail+'&PD='+priceDetail,'_blank';
 
- </script>";
-   	 }
-	} else {
-    echo "<h1 style='font-weight: bold;padding-left: 396px;color: red;text-transform: uppercase;'>Product Coming Soon!!!</h1>";
+                     });
+                   })".
+             "</script>";
 }
-
-$output.="</div>";
-$output.="</div>";
- print($output);
-
-
 ?>
+  <?php
+    $output.="</div>";
+    $output.="</div>";
+    print($output);
+}
+?>
+<!-- <?php
+//echo $pagination->createLinks();
+?> -->
+
+    </div>
 </div>
 
-
-				</div>
-			</div>
-		</div>
 	</section>
 <?php include 'footer.php';?>
 <!--/Footer-->
-
-
-
     <script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/price-range.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>

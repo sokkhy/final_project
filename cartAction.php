@@ -13,23 +13,28 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $shritbrand = $_GET['brand'];
         $a = explode ("_", $shritbrand);
          $brand = $a[0];
-         echo $brand;
-        // get product details
+
+        if($brand =="adidas" || $brand =="diesel" || $brand =="gucci" || $brand =="hugoboss" || $brand =="nike" || $brand =="prada" || $brand =="puma" || $brand =="supreme" || $brand =="tommyhilfiger" || $brand =="underarmour" || $brand =="versace")
+        {
         $query = $db->query('SELECT * FROM '.$brand.'  WHERE id =' .$productID);
+          $row = $query->fetch_assoc();
+          $itemData = array(
+              'id' => $row['shirtCode'],
+              'name' => $row['shirtName'],
+              'price' => $row['Price'],
+              'img' => $row['image'],
+              'qty' => 1
+          );
 
-        $row = $query->fetch_assoc();
+          $insertItem = $cart->insert($itemData);
+          $redirectLoc = $insertItem?'viewCart.php':'index.php';
+          header("Location:".$redirectLoc);
+}else {
+  echo "<div style='margin-left:600px;'><img src='404.png'></div>";
+}
 
-        $itemData = array(
-            'id' => $row['shirtCode'],
-            'name' => $row['shirtName'],
-            'price' => $row['Price'],
-            'img' => $row['image'],
-            'qty' => 1
-        );
 
-        $insertItem = $cart->insert($itemData);
-        $redirectLoc = $insertItem?'viewCart.php':'index.php';
-        header("Location:".$redirectLoc);
+
     }
     elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
         $itemData = array(
