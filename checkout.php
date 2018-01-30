@@ -12,16 +12,16 @@ if($cart->total_items() <= 0){
 }
 
 // set customer ID in session
-$_SESSION['sessCustomerID'] = 1;
+$_SESSION['sessCustomerID'];
 
 // get customer details by session customer ID
-$query = $db->query("SELECT * FROM adidas WHERE id = ".$_SESSION['sessCustomerID']);
+$query = $db->query("SELECT * FROM customers WHERE customer_id = ".$_SESSION['sessCustomerID']);
 $custRow = $query->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Checkout - PHP Shopping Cart Tutorial</title>
+    <title>Checkout</title>
     <meta charset="utf-8">
      <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -94,10 +94,10 @@ $custRow = $query->fetch_assoc();
     </table>
     <div class="shipAddr">
         <h4>Shipping Details</h4>
-        <p><?php echo $custRow['name']; ?></p>
-        <p><?php echo $custRow['email']; ?></p>
-        <p><?php echo $custRow['phone']; ?></p>
-        <p><?php echo $custRow['address']; ?></p>
+        <p><?php echo $custRow['customer_name']; ?></p>
+        <p><?php echo $custRow['customer_email']; ?></p>
+        <p><?php echo $custRow['customer_phone']; ?></p>
+        <p><?php echo $custRow['customer_address']; ?></p>
     </div>
     <div class="footBtn">
         <a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a>

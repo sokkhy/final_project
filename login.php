@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+ $host = "localhost";
+  $user = "root";
+  $password = "";
+  $database = "dbkeybest";
+
+ $conn = new mysqli($host, $user, $password, $database);
+ // Check connection
+ if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+ }
+$stmt = $conn->prepare("INSERT INTO customers (customer_id,customer_name, customer_address, customer_phone, customer_email, customer_password) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $customer_id, $customer_name, $customer_address, $customer_phone, $customer_email, $customer_password);
+
+//validate form
+if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAddrr']) && !empty($_POST['cusPhn']) && !empty($_POST['email']) && !empty($_POST["cusPw"])){
+  $customer_id = $_POST["cusID"];
+  $customer_name = $_POST["cusName"];
+  $customer_address=$_POST["cusAddrr"];
+  $customer_phone = $_POST["cusPhn"];
+  $customer_email= $_POST["email"];
+  $customer_password = $_POST["cusPw"];
+  $stmt->execute();
+  }
+
+  include('dbcon.php');
+  $query = $db->query("SELECT customer_password, customer_email from customers");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +51,7 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -34,21 +66,21 @@
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	
+
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="javascript:">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+						<form action="" method="post">
+              <input type="email" placeholder="Email Address" name="mail"/>
+							<input type="text" placeholder="Password" name="pass"/>
 							<span>
-								<input type="checkbox" class="checkbox"> 
+								<input type="checkbox" class="checkbox">
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" name="login" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -58,10 +90,13 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="javascript:">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
+						<form action="" method="post">
+							<input type="text" placeholder="Full name" name="cusName"/>
+              <input type="text" placeholder="Your Order code" name="cusID"/>
+							<input type="text" placeholder="Address" name="cusAddrr"/>
+							<input type="text" placeholder="Phone Number" name="cusPhn"/>
+              <input type="email" placeholder="Email" name="email"/>
+							<input type="password" placeholder="Password" name="cusPw"/>
 							<button type="submit" class="btn btn-default">Signup</button>
 						</form>
 					</div><!--/sign up form-->
@@ -69,12 +104,12 @@
 			</div>
 		</div>
 	</section><!--/form-->
-	
-	
-<?php include 'footer.php';?>	<!--/Footer-->
-	
 
-  
+
+<?php include 'footer.php';?>	<!--/Footer-->
+
+
+
     <script src="js/jquery.js"></script>
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
@@ -84,3 +119,22 @@
 </body>
 
 </html>
+<?php
+if($query->num_rows > 0){
+ while($row = $query->fetch_assoc()){
+if(isset($_POST["login"])) {
+
+
+     if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
+      header("Location: index.php");
+     }else {
+       header("Location:login.php");
+     }
+   }
+
+  }
+
+
+}
+
+ ?>
