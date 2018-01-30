@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
  $host = "localhost";
@@ -26,7 +27,8 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
   }
 
   include('dbcon.php');
-  $query = $db->query("SELECT customer_password, customer_email from customers");
+  $query = $db->query("SELECT * from customers");
+  $row = $query->fetch_assoc();
 
 
 ?>
@@ -72,6 +74,15 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
+            <?php
+            if(isset($_POST["login"])) {
+                 if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
+                  header("Location:index.php");
+                }else {
+                  echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
+                }
+            }
+             ?>
 						<h2>Login to your account</h2>
 						<form action="" method="post">
               <input type="email" placeholder="Email Address" name="mail"/>
@@ -120,21 +131,7 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 
 </html>
 <?php
-if($query->num_rows > 0){
- while($row = $query->fetch_assoc()){
-if(isset($_POST["login"])) {
 
 
-     if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
-      header("Location: index.php");
-     }else {
-       header("Location:login.php");
-     }
-   }
-
-  }
-
-
-}
 
  ?>
