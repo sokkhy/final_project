@@ -24,7 +24,7 @@ $row9 = $query9->fetch_assoc();
 $query10 = $db->query('SELECT COUNT(*) as gucci_total FROM gucci');
 $row10 = $query10->fetch_assoc();
 
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +46,7 @@ $row10 = $query10->fetch_assoc();
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -61,7 +61,7 @@ $row10 = $query10->fetch_assoc();
 
 <body>
 	<?php include 'header.php';?><!--/header-->
-	
+
 	<section>
 		<div class="container">
 			<div class="row">
@@ -116,7 +116,7 @@ $row10 = $query10->fetch_assoc();
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -174,7 +174,7 @@ $row10 = $query10->fetch_assoc();
 								</div>
 							</div>
 						</div> --><!--/category-products-->
-					
+
 									<div class="brands_products"><!--brands_products-->
 						<h2>Brands</h2>
 						<div class="brands-name">
@@ -193,7 +193,7 @@ $row10 = $query10->fetch_assoc();
 							</ul>
 						</div>
 					</div><!--/brands_products-->
-						
+
 						<!-- <div class="price-range">
 							<h2>Price Range</h2>
 							<div class="well">
@@ -201,11 +201,11 @@ $row10 = $query10->fetch_assoc();
 								 <b>$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div> --><!--/price-range-->
-						
+
 						<div class="shipping text-center"><!--shipping-->
 							<img src="images/home/shipping.jpg" alt="" />
 						</div><!--/shipping-->
-						
+
 					</div>
 				</div>
 				<?php
@@ -225,10 +225,10 @@ $row10 = $query10->fetch_assoc();
 							"<div class='view-product'>".
 								"<div><img src=".$link." id='pic'></div>".
 							"</div>".
-							
+
 						// <div id="similar-product" class="carousel slide" data-ride="carousel">
-								
-								 
+
+
 						// 		    <div class="carousel-inner">
 						// 				<div class="item active">
 						// 				  <a href="javascript:"><img src="images/product-details/similar1.jpg" alt=""></a>
@@ -245,17 +245,17 @@ $row10 = $query10->fetch_assoc();
 						// 				  <a href="javascript:"><img src="images/product-details/similar2.jpg" alt=""></a>
 						// 				  <a href="javascript:"><img src="images/product-details/similar3.jpg" alt=""></a>
 						// 				</div>
-										
+
 						// 			</div>
 
-								
+
 						// 		  <a class="left item-control" href="javascript:similar-product" data-slide="prev">
 						// 			<i class="fa fa-angle-left"></i>
 						// 		  </a>
 						// 		  <a class="right item-control" href="javascript:similar-product" data-slide="next">
 						// 			<i class="fa fa-angle-right"></i>
 						// 		  </a>
-						// 	</div> 
+						// 	</div>
 
 						"</div>".
 						"<div class='col-sm-7'>".
@@ -267,7 +267,7 @@ $row10 = $query10->fetch_assoc();
 								"<span>".
 									"<span> US ".$price."</span>".
 									"<label>Quantity:</label>".
-									"<input type='text' value='3' />".
+									"<input type='text' value='1' />".
 									"<a href='cartAction.php?action=addToCart&id=".$sid."&brand=".$code."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>".
 								"</span>".
 								"<p><b>Availability: </b><span>In Stock</span></p>".
@@ -306,7 +306,7 @@ $row10 = $query10->fetch_assoc();
 							</div>
 
 							<!--/product-details-->
-					
+
 					<!-- <div class="category-tab shop-details-tab">
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -367,7 +367,7 @@ $row10 = $query10->fetch_assoc();
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="tab-pane fade" id="companyprofile" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
@@ -418,7 +418,7 @@ $row10 = $query10->fetch_assoc();
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="tab-pane fade" id="tag" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
@@ -469,7 +469,7 @@ $row10 = $query10->fetch_assoc();
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="tab-pane fade active in" id="reviews" >
 								<div class="col-sm-12">
 									<ul>
@@ -479,7 +479,7 @@ $row10 = $query10->fetch_assoc();
 									</ul>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 									<p><b>Write Your Review</b></p>
-									
+
 									<form action="javascript:">
 										<span>
 											<input type="text" placeholder="Your Name"/>
@@ -493,16 +493,16 @@ $row10 = $query10->fetch_assoc();
 									</form>
 								</div>
 							</div>
-							
+
 						</div>
 					</div> --><!--/category-tab-->
-					
+
 					<!-- <div class="recommended_items">
 						<h2 class="title text-center">recommended items</h2>
-						
+
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
-								<div class="item active">	
+								<div class="item active">
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
@@ -540,7 +540,7 @@ $row10 = $query10->fetch_assoc();
 										</div>
 									</div>
 								</div>
-								<div class="item">	
+								<div class="item">
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
@@ -584,19 +584,19 @@ $row10 = $query10->fetch_assoc();
 							  </a>
 							  <a class="right recommended-item-control" href="javascript:recommended-item-carousel" data-slide="next">
 								<i class="fa fa-angle-right"></i>
-							  </a>			
+							  </a>
 						</div>
 					</div>
-					
+
 				</div> -->
 			</div>
 		</div>
 	</section>
-	
-	<?php include 'footer.php';?>	<!--/Footer-->
-	
 
-  
+	<?php include 'footer.php';?>	<!--/Footer-->
+
+
+
     <script src="js/jquery.js"></script>
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>

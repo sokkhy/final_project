@@ -12,7 +12,7 @@ if($cart->total_items() <= 0){
 }
 
 // set customer ID in session
-$_SESSION['sessCustomerID']=1;
+$_SESSION['sessCustomerID']= 1;
 
 // get customer details by session customer ID
 $query = $db->query("SELECT customer_password, customer_email FROM customers WHERE customer_id = ".$_SESSION['sessCustomerID']);
