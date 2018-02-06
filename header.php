@@ -1,3 +1,19 @@
+<?php
+// ob_start();
+//  $host = "localhost";
+//   $user = "root";
+//   $password = "";
+//   $database = "dbkeybest";
+//
+//  $conn = new mysqli($host, $user, $password, $database);
+//  // Check connection
+//  if ($conn->connect_error) {
+//      die("Connection failed: " . $conn->connect_error);
+//
+//  }
+//  $query = $conn->query("SELECT * from customers");
+//  $row = $query->fetch_assoc();
+ ?>
 <style>
 nav ul {
 margin: 5px;
@@ -59,7 +75,7 @@ nav #login-content {
 	    padding: 15px;
 	    box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
 	    border-radius: 3px 0 3px 3px;
-	    height: 195px;
+	    height: 275px;
 }
 
 nav li #login-content {
@@ -135,21 +151,30 @@ position: relative;
 top: 2px;
 right: 2px;
 }
+.sign_up{
+	    margin-top: 50px;
+}
 </style>
 
 <header id="header"><!--header-->
-		<div class="header_top" style="background: none repeat scroll 0 0 #eb0606;"><!--header_top-->
+		<div class="header_top" style="background: none repeat scroll 0 0 #eb0606; height: 85px;"><!--header_top-->
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
+				<div class="row" style="margin-top: 24px;">
+					<div class="col-sm-3">
+						<div class="navbar-brand" style="margin-left: -31px; margin-top: -25px;">
+						<a href="index.php"><img src="logo.png" alt=""></a>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-phone"></i> +855 10 910 651</a></li>
-							  <li><a href="javascript:" style="color: #fff"><i class="fa fa-envelope"></i> khy@4shop.com</a></li>
+							  <li><a href="javascript:" style="color: #fff">+855 10 910 651</a></li>
+							  <li><a href="javascript:" style="color: #fff">khy@4shop.com</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-3">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
@@ -160,31 +185,45 @@ right: 2px;
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<?php
+					// if(isset($_POST["login"])) {
+					// 		 if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
+					// 			header("Location:index.php");
+					// 		}else {
+					// 			echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
+					// 		}
+					// }
+					 ?>
+					<div class="col-sm-3">
 						<nav>
-  <ul>
-    <li id="login">
-      <a id="login-trigger" href="#">
-        Log in <span>▼</span>
-      </a>
-      <div id="login-content">
-        <form style="width:310px;margin-top: 4px;" id="form">
-          <fieldset id="inputs">
-            <input id="username" type="email" name="Email" placeholder="Your email address" required>
-            <input id="password" type="password" name="Password" placeholder="Password" required>
-          </fieldset>
-          <fieldset id="actions">
-            <input type="submit" id="submit" value="Log in">
-            <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-          </fieldset>
-        </form>
-      </div>
-    </li>
-    <!-- <li id="signup">
-      <a href="">Sign up FREE</a>
-    </li> -->
-  </ul>
-</nav>
+							  <ul>
+							    <li id="login">
+							      <a id="login-trigger" href="login.php">
+							        Log in
+							      </a>
+							      <!-- <div id="login-content">
+							        <form style="width:310px;margin-top: 4px;" id="form"  action="" method="post">
+							          <div id="inputs">
+							            <input id="username" type="email" name="mail" placeholder="Your email address" required>
+							            <input id="password" type="password" name="pass" placeholder="Password" required>
+							          </div>
+							          <div id="actions">
+							            <input type="submit" id="submit" value="Log in"  name="login" >
+
+							          </div>
+												<div class="sign_up">
+													<span><i>Not have 4shop account?</i></span>
+													<a href="login.php" class="btn btn-primary">Sign Up now!</a>
+												</div>
+							        </form>
+
+							      </div> -->
+							    </li>
+							    <!-- <li id="signup">
+							      <a href="">Sign up FREE</a>
+							    </li> -->
+							  </ul>
+							</nav>
 					</div>
 				</div>
 			</div>
@@ -246,19 +285,19 @@ $(document).ready(function(){
       window.location.href = "http://localhost:81/4Shop/viewCart.php";
   })
 });
-$(document).ready(function(){
-  $('#login-trigger').click(function(){
-    $(this).next('#login-content').slideToggle(200);
-    // $(this).toggleClass('active');
-
-    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
-      else $(this).find('span').html('&#x25BC;')
-    })
-});
-$(document).ready(function(){
-  $('#login-content').mouseleave(function(){
-$(this).css("display", "none");
-
-    })
-});
+// $(document).ready(function(){
+//   $('#login-trigger').click(function(){
+//     $(this).next('#login-content').slideToggle(200);
+//     // $(this).toggleClass('active');
+//
+//     if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+//       else $(this).find('span').html('&#x25BC;')
+//     })
+// });
+// $(document).ready(function(){
+//   $('#login-content').mouseleave(function(){
+// $(this).css("display", "none");
+//
+//     })
+// });
 </script>

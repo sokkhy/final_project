@@ -4,7 +4,7 @@ include('Pagination.php');
     //Include database configuration file
 include('dbcon.php');
 //Include number of product count
-include 'productCount.php';
+include('productCount.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

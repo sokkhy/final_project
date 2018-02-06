@@ -28,9 +28,6 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 
   include('dbcon.php');
   $query = $db->query("SELECT * from customers");
-  $row = $query->fetch_assoc();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,15 +70,18 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
-					<div class="login-form"><!--login form-->
+					<div class="login-form">
             <?php
             if(isset($_POST["login"])) {
-                 if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
+            while($row = $query->fetch_assoc()){
+
+                 if($row["customer_email"] == $_POST["mail"]&&$row["customer_password"] == $_POST["pass"]){
                   header("Location:index.php");
                 }else {
                   echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
                 }
             }
+          }
              ?>
 						<h2>Login to your account</h2>
 						<form action="" method="post">
@@ -93,7 +93,7 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 							</span>
 							<button type="submit" name="login" class="btn btn-default">Login</button>
 						</form>
-					</div><!--/login form-->
+					</div>
 				</div>
 				<div class="col-sm-1">
 					<h2 class="or">OR</h2>
