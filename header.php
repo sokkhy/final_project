@@ -195,6 +195,11 @@ right: 2px;
 					// }
 					 ?>
 					<div class="col-sm-3">
+            <div class="" style="display:  inline-flex;position:  relative;">
+              <div class="search_box pull-right" style="width: 180px;">
+                <input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search product here" onkeyup="searchFilter()"/>
+
+              </div>
 						<nav>
 							  <ul>
 							    <li id="login">
@@ -227,7 +232,8 @@ right: 2px;
 					</div>
 				</div>
 			</div>
-		</div><!--/header_top-->
+		</div>
+  <!--/header_top-->
 				<!-- <div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							  <ul role="menu" class="sub-menu">
