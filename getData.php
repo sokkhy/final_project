@@ -93,7 +93,7 @@ $output.="</div>";
 print($output);
  }
  else{
-    echo "<h1>Not found!</h1>";
+    echo "<img src='e.png' style='margin-left: 25%;margin-top: 10%;width: 25%'>";
  }
 }
   ?>
