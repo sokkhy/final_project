@@ -9,6 +9,11 @@ session_start();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+if (!isset($_COOKIE['password']) || $_COOKIE['password'] !== 'thepike') {
+			 header('Location: loginadmin.php');
+			 exit;
+	 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +98,10 @@ div.tab button.active {
 </head>
 <body>
 
-<h1 style="color: red;">ADMIN</h1>
+<div class="">
+	<h1 style="color: red;">ADMIN</h1>
+	<a href="addnewbrand.php" class="btn btn-primary">Add Product</a>
+</div>
 
 <div class="tab">
   <button class="tablinks" onclick="eachbrand(event, 'adidas')" value="adidas">Adidas</button>

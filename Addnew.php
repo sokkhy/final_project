@@ -83,7 +83,7 @@ padding: 20px;
 
 	   <div class="container" style="width: 60%;">
 <?php
-  echo "<h1>Add new shirt to <span style='text-transform: uppercase;'>$ins_brand</span></h1>";
+  echo "<h1>Add New <span style='text-transform: uppercase;'>$ins_brand</span></h1>";
 ?>
 
 		  <form class="form-inline form" action="" method="post" enctype="multipart/form-data" style="display: inline-grid;">

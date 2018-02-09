@@ -56,8 +56,8 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.html">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.html">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -74,14 +74,14 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
             <?php
             if(isset($_POST["login"])) {
             while($row = $query->fetch_assoc()){
-
                  if($row["customer_email"] == $_POST["mail"]&&$row["customer_password"] == $_POST["pass"]){
                   header("Location:index.php");
-                }else {
+                }
+                else {
                   echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
                 }
+              }
             }
-          }
              ?>
 						<h2>Login to your account</h2>
 						<form action="" method="post">

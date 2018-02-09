@@ -57,12 +57,37 @@ $row10 = $query10->fetch_assoc();
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+  function searchFilter(page_num) {
+      page_num = page_num?page_num:0;
+      var keywords = $('#keywords').val();
+      // var sortBy = $('#sortBy').val();
+      $.ajax({
+          type: 'POST',
+          url: 'getData.php',
+          data:'page='+page_num+'&keywords='+keywords,
+          //+'&sortBy='+sortBy,
+          beforeSend: function () {
+              $('.loading-overlay').show();
+          },
+          success: function (html) {
+              $('#posts_content').html(html);
+              $('.loading-overlay').fadeOut("slow");
+          }
+      });
+  }
+  </script>
+    <style media="screen">
+      section{
+
+      }
+    </style>
 </head><!--/head-->
 
 <body>
 	<?php include 'header.php';?><!--/header-->
 
-	<section>
+	<section style="margin-top:50px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3" style="margin-left: -23px;">
@@ -174,8 +199,7 @@ $row10 = $query10->fetch_assoc();
 								</div>
 							</div>
 						</div> --><!--/category-products-->
-
-									<div class="brands_products"><!--brands_products-->
+						<div class="brands_products">
 						<h2>Brands</h2>
 						<div class="brands-name">
 							<ul class="nav nav-pills nav-stacked">
@@ -192,7 +216,7 @@ $row10 = $query10->fetch_assoc();
 								<li><a href="versace.php"> <span class="pull-right">(<?php echo $row5['versace_total'] ?>)</span>Versace</a></li>
 							</ul>
 						</div>
-					</div><!--/brands_products-->
+					</div>
 
 						<!-- <div class="price-range">
 							<h2>Price Range</h2>
@@ -266,8 +290,8 @@ $row10 = $query10->fetch_assoc();
 								"<img src='images/product-details/rating.png' alt='' />".
 								"<span>".
 									"<span> US ".$price."</span>".
-									"<label>Quantity:</label>".
-									"<input type='text' value='1' />".
+									// "<label>Quantity:</label>".
+									// "<input type='text' value='1' />".
 									"<a href='cartAction.php?action=addToCart&id=".$sid."&brand=".$code."' class='addToCart btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to Cart</a>".
 								"</span>".
 								"<p><b>Availability: </b><span>In Stock</span></p>".
@@ -593,16 +617,13 @@ $row10 = $query10->fetch_assoc();
 		</div>
 	</section>
 
-	<?php include 'footer.php';?>	<!--/Footer-->
-
-
-
-    <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+  <?php include 'footer.php';?>	<!--/Footer-->
+  <script src="js/jquery.js"></script>
+  <script src="js/price-range.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <script src="js/main.js"></script>
 
 <script>
 function eachbrand(evt, brancname) {

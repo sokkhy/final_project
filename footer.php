@@ -110,8 +110,8 @@
 						<div class="single-widget">
 							<h2>Policies</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="javascript:">Terms of Use</a></li>
-								<li><a href="javascript:">Privecy Policy</a></li>
+								<li><a href="termofuse.html">Terms of Use</a></li>
+								<li><a href="policy.html">Privacy Policy</a></li>
 								<li><a href="javascript:">Refund Policy</a></li>
 								<li><a href="javascript:">Billing System</a></li>
 							</ul>

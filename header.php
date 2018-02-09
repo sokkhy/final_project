@@ -157,132 +157,132 @@ right: 2px;
 </style>
 
 <header id="header"><!--header-->
-		<div class="header_top" style="background: none repeat scroll 0 0 #eb0606; height: 85px;"><!--header_top-->
-			<div class="container">
-				<div class="row" style="margin-top: 24px;">
-					<div class="col-sm-3">
-						<div class="navbar-brand" style="margin-left: -31px; margin-top: -25px;">
-						<a href="index.php"><img src="logo.png" alt=""></a>
+	<div class="header_top" style="background: none repeat scroll 0 0 #eb0606; height: 85px;"><!--header_top-->
+		<div class="container">
+			<div class="row" style="margin-top: 24px;">
+				<div class="col-sm-3">
+					<div class="navbar-brand" style="margin-left: -31px; margin-top: -25px;">
+					<a href="index.php"><img src="logo.png" alt="" style="margin-top: -8px;"></a>
 
-						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-							  <li><a href="javascript:" style="color: #fff">+855 10 910 651</a></li>
-							  <li><a href="javascript:" style="color: #fff">khy@4shop.com</a></li>
-							</ul>
-						</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="contactinfo">
+            <ul class="nav nav-pills">
+						  <li><p href="javascript:" style="color: #fff;margin-left: -50px;margin-top: 7px;font-family: Roboto;">+855 10 910 651</p></li>
+						  <li><p href="javascript:" style="color: #fff;margin-left:  22px;margin-top: 7px;font-family: Roboto;">khy4shop@gmail.com</p></li>
+						</ul>
 					</div>
-					<div class="col-sm-3">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-twitter" style="color: #fff"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-linkedin" style="color: #fff"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-dribbble" style="color: #fff"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-google-plus" style="color: #fff"></i></a></li>
-							</ul>
-						</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="social-icons pull-right">
+						<ul class="nav navbar-nav">
+							<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
+							<li><a href="javascript:"><i class="fa fa-twitter" style="color: #fff"></i></a></li>
+							<li><a href="javascript:"><i class="fa fa-linkedin" style="color: #fff"></i></a></li>
+							<li><a href="javascript:"><i class="fa fa-dribbble" style="color: #fff"></i></a></li>
+							<li><a href="javascript:"><i class="fa fa-google-plus" style="color: #fff"></i></a></li>
+						</ul>
 					</div>
-					<?php
-					// if(isset($_POST["login"])) {
-					// 		 if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
-					// 			header("Location:index.php");
-					// 		}else {
-					// 			echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
-					// 		}
-					// }
-					 ?>
-					<div class="col-sm-3">
-            <div class="" style="display:  inline-flex;position:  relative;">
-              <div class="search_box pull-right" style="width: 180px;">
-                <input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search product here" onkeyup="searchFilter()"/>
+				</div>
+				<?php
+				// if(isset($_POST["login"])) {
+				// 		 if($row["customer_password"] == $_POST["pass"] && $row["customer_email"] == $_POST["mail"]){
+				// 			header("Location:index.php");
+				// 		}else {
+				// 			echo "<h2 style='color: red;'> Invalide Email or Password</h2>";
+				// 		}
+				// }
+				 ?>
+				<div class="col-sm-3">
+          <div class="" style="display:  inline-flex;position:  relative;">
+            <div class="search_box pull-right" style="width: 180px;">
+              <input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search product here" onkeyup="searchFilter()"/>
 
-              </div>
-						<nav>
-							  <ul>
-							    <li id="login">
-							      <a id="login-trigger" href="login.php">
-							        Log in
-							      </a>
-							      <!-- <div id="login-content">
-							        <form style="width:310px;margin-top: 4px;" id="form"  action="" method="post">
-							          <div id="inputs">
-							            <input id="username" type="email" name="mail" placeholder="Your email address" required>
-							            <input id="password" type="password" name="pass" placeholder="Password" required>
-							          </div>
-							          <div id="actions">
-							            <input type="submit" id="submit" value="Log in"  name="login" >
+            </div>
+					<nav>
+						  <ul>
+						    <li id="login">
+						      <a id="login-trigger" href="login.php">
+						        Log in
+						      </a>
+						      <!-- <div id="login-content">
+						        <form style="width:310px;margin-top: 4px;" id="form"  action="" method="post">
+						          <div id="inputs">
+						            <input id="username" type="email" name="mail" placeholder="Your email address" required>
+						            <input id="password" type="password" name="pass" placeholder="Password" required>
+						          </div>
+						          <div id="actions">
+						            <input type="submit" id="submit" value="Log in"  name="login" >
 
-							          </div>
-												<div class="sign_up">
-													<span><i>Not have 4shop account?</i></span>
-													<a href="login.php" class="btn btn-primary">Sign Up now!</a>
-												</div>
-							        </form>
+						          </div>
+											<div class="sign_up">
+												<span><i>Not have 4shop account?</i></span>
+												<a href="login.php" class="btn btn-primary">Sign Up now!</a>
+											</div>
+						        </form>
 
-							      </div> -->
-							    </li>
-							    <!-- <li id="signup">
-							      <a href="">Sign up FREE</a>
-							    </li> -->
-							  </ul>
-							</nav>
+						      </div> -->
+						    </li>
+						    <!-- <li id="signup">
+						      <a href="">Sign up FREE</a>
+						    </li> -->
+						  </ul>
+						</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--/header_top-->
+			<!-- <div class="col-md-8 clearfix">
+					<div class="shop-menu clearfix pull-right">
+						  <ul role="menu" class="sub-menu">
+						  		<li><a href="index.php" class="active">Home</a></li>
+                                <li><a href="shop.php">Products</a></li>
+								<li><a href="ViewCart.php">Cart</a></li>
+								<li><a href="login.php">Login</a></li>
+                            </ul>
+					</div>
+				</div> -->
+			<!-- </div> -->
+<!-- 		</div>
+	</div>  -->
+	<!--/header-middle-->
+
+	<!-- <div class="header-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+
+					<div class="mainmenu pull-left">
+						<ul class="nav navbar-nav collapse navbar-collapse">
+							<li><a href="index.php" class="active">Home</a></li>
+                              <li><a href="shop.php">Products</a></li>
+							<li><a href="checkout.php">Checkout</a></li>
+							<li><a href="viewCart.php">Cart</a></li>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="contact-us.php">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3" style="display:  inline-flex;position:  relative;">
+					<div class="search_box pull-right" style="width: 200px;">
+						<input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search" onkeyup="searchFilter()"/>
+
+					</div>
+					<div style="width: 200px;display: -webkit-box;margin-left: 192px;margin-top: -45px;">
+						<div style="margin-left:  -200px;margin-top: 51px;color: red;font-weight: bolder;">
+							<span>Your Cart</span>
+						</div>
+						<div style="cursor:pointer;" id="cart">
+							<p id="CartNm" style="margin-top: 33px;margin-left: 20px;padding-top: 8px;position:  absolute;font-size: 1em;font-weight: bolder;color: red;">0</p>
+							<img src="cart.png" alt="" style="margin-top: 28px;width: 50px;height: 54px;">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-  <!--/header_top-->
-				<!-- <div class="col-md-8 clearfix">
-						<div class="shop-menu clearfix pull-right">
-							  <ul role="menu" class="sub-menu">
-							  		<li><a href="index.php" class="active">Home</a></li>
-	                                <li><a href="shop.php">Products</a></li>
-									<li><a href="ViewCart.php">Cart</a></li>
-									<li><a href="login.php">Login</a></li>
-	                            </ul>
-						</div>
-					</div> -->
-				<!-- </div> -->
-	<!-- 		</div>
-		</div>  -->
-		<!--/header-middle-->
-
-		<!-- <div class="header-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li>
-                                <li><a href="shop.php">Products</a></li>
-								<li><a href="checkout.php">Checkout</a></li>
-								<li><a href="viewCart.php">Cart</a></li>
-								<li><a href="login.php">Login</a></li>
-								<li><a href="contact-us.php">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3" style="display:  inline-flex;position:  relative;">
-						<div class="search_box pull-right" style="width: 200px;">
-							<input style="color:black;margin-right: 200px;" id="keywords" placeholder="Search" onkeyup="searchFilter()"/>
-
-						</div>
-						<div style="width: 200px;display: -webkit-box;margin-left: 192px;margin-top: -45px;">
-							<div style="margin-left:  -200px;margin-top: 51px;color: red;font-weight: bolder;">
-								<span>Your Cart</span>
-							</div>
-							<div style="cursor:pointer;" id="cart">
-								<p id="CartNm" style="margin-top: 33px;margin-left: 20px;padding-top: 8px;position:  absolute;font-size: 1em;font-weight: bolder;color: red;">0</p>
-								<img src="cart.png" alt="" style="margin-top: 28px;width: 50px;height: 54px;">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
+	</div> -->
 	</header>
 
 <script>
