@@ -48,7 +48,11 @@ text-decoration: none;
 color: #fff;
 
 }
-
+#header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
 nav #signup a {
 border-radius: 0 3px 3px 0;
 }
@@ -177,7 +181,7 @@ right: 2px;
 				<div class="col-sm-3">
 					<div class="social-icons pull-right">
 						<ul class="nav navbar-nav">
-							<li><a href="javascript:"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
+							<li><a href="https://www.facebook.com/the4shop"><i class="fa fa-facebook" style="color: #fff"></i></a></li>
 							<li><a href="https://twitter.com/TSokkhy"><i class="fa fa-twitter" style="color: #fff"></i></a></li>
 							<li><a href="https://www.linkedin.com/in/thy-sokkhy-a0b6a6a3/"><i class="fa fa-linkedin" style="color: #fff"></i></a></li>
 							<li><a href="https://plus.google.com/u/0/+SokkhyProgramerPike"><i class="fa fa-google-plus" style="color: #fff"></i></a></li>
@@ -305,4 +309,7 @@ $(document).ready(function(){
 //
 //     })
 // });
+$(document).ready(function() {
+  $("section").css("padding-top","50px");
+})
 </script>

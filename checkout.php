@@ -54,7 +54,7 @@ $custRow = $query->fetch_assoc();
 <body>
     <?php include 'header.php';?>
     <section><!--form-->
-      <div class="container">
+      <div class="container" style="padding-top: 50px;">
           <h1>Order Preview</h1>
           <table class="table">
           <thead>
@@ -106,30 +106,6 @@ $custRow = $query->fetch_assoc();
           </div>
       </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include 'footer.php';?>
 <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -139,3 +115,10 @@ $custRow = $query->fetch_assoc();
     <script src="js/main.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function() {
+  //   $(".row").css("margin-top","-24px");
+  // $(".container").css("margin-top","40px");
+    $(".container").css("padding-left","20px");
+})
+</script>

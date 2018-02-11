@@ -22,7 +22,7 @@ $cart = new Cart;
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.html">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.html">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.html">
@@ -60,7 +60,7 @@ $cart = new Cart;
             <th>Product</th>
             <th>Price</th>
             <th>Image</th>
-            <th>Quantity</th> 
+            <th>Quantity</th>
             <th>Subtotal</th>
             <th>&nbsp;</th>
         </tr>
@@ -108,3 +108,9 @@ $cart = new Cart;
     <script src="js/main.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".containers").css("padding-top","86px");//    padding-top: 86px;
+    $(".containers").css("padding-left","20px");
+})
+</script>

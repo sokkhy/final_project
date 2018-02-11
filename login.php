@@ -130,6 +130,13 @@ if(!empty($_POST['cusID']) && !empty($_POST['cusName']) && !empty($_POST['cusAdd
 </body>
 
 </html>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#header").css("position","relative");
+        $("#form").css("margin-top","60px");
+  })
+
+</script>
 <?php
 
 
