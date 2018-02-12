@@ -15,7 +15,7 @@ if(isset($_POST['page'])){
     $keywords = $_POST['keywords'];
     // $sortBy = $_POST['sortBy'];
     if(!empty($keywords)){
-     $whereSQL = "WHERE shirtName LIKE '%".$keywords."%'";
+     $whereSQL = "WHERE shirtCode LIKE '%".$keywords."%'";
     }
     // if(!empty($sortBy)){
     //     $orderSQL = " ORDER BY id ".$sortBy;
@@ -24,7 +24,7 @@ if(isset($_POST['page'])){
     // }
 
     //get number of rows
-    $queryNum = $db->query("(SELECT COUNT(shirtName) as postNum FROM adidas $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM diesel $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM gucci $whereSQL)  UNION (SELECT COUNT(shirtName) as postNum FROM hugoboss $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM nike $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM prada $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM puma $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM supreme $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM tommyhilfiger $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM underarmour $whereSQL) UNION (SELECT COUNT(shirtName) as postNum FROM versace $whereSQL)");
+    $queryNum = $db->query("(SELECT COUNT(shirtCode) as postNum FROM adidas $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM diesel $whereSQL)  UNION (SELECT COUNT(shirtCode) as postNum FROM gucci $whereSQL)  UNION (SELECT COUNT(shirtCode) as postNum FROM hugoboss $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM nike $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM prada $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM puma $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM supreme $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM tommyhilfiger $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM underarmour $whereSQL) UNION (SELECT COUNT(shirtCode) as postNum FROM versace $whereSQL)");
     //add (.$orderSQ) after .$whereSQL for sortin
     $resultNum = $queryNum->fetch_assoc();
     $rowCount = $resultNum['postNum'];
